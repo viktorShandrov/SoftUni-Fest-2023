@@ -8,6 +8,7 @@ const schema = new mongoose.Schema({
     },
     password:{
         type:String,
+        required:[true,"password is required"],
     },
     isPasswordHashed: {
         type: Boolean,
@@ -15,7 +16,7 @@ const schema = new mongoose.Schema({
       }
 
 })
-schema.virtual("repeatePassword").set(function(value){
+schema.virtual("repetedPassword").set(function(value){
     if(this.password!==value){
         throw new Error("Passwords mismach!")
     }
