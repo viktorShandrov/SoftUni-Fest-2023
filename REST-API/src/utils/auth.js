@@ -1,12 +1,16 @@
 const jwt = require("./utils")
 
 exports.auth= async(req,res,next)=>{
-    // const token = req.body.userToken
-    const token =  req.headers.authorization;
-    if(token){
-        req.user = await jwt.verify(token,jwt.secret)
+    try{
+        const token =  req.headers.authorization;
+        if(token){
+            req.user = await jwt.verify(token,jwt.secret)
+        }
+        next()
+    }catch (error){
+        res.status(400).json({message: "Invalid session. Please login again."})
     }
-    next()
+
 }
 exports.isAuth= async(req,res,next)=>{
     

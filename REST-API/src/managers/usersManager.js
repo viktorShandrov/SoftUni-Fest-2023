@@ -21,16 +21,17 @@ exports.register = async (email,username,password,repetedPassword) =>{
 }
 const login = async(email,password)=>{
     const user = await userModel.findOne({email})
+    console.log(user)
     if(!user){
         throw new Error("Email or password is incorrect")
     }
 
     const isPasswordMatching = await bcrypt.compare(password,user.password)
-
+    console.log(isPasswordMatching);
     if(!isPasswordMatching){
         throw new Error("Email or password is incorrect")
     }
 
     return  utils.sign({email,_id:user._id},utils.secret)
 }
-exports.login
+exports.login = login

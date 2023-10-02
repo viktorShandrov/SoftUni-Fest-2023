@@ -12,8 +12,8 @@ export class HttpService {
   getRequest(url:string){
     return this.HTTP.get(url)
   }
-  postRequest(url:string,body:any,options:any){
-    if(!options.headers["Content-Type"]){
+  postRequest(url:string,body:any,options?:any){
+    if(options&&!options.headers["Content-Type"]){
       options.headers["Content-Type"] = "application/json"
     }
     return this.HTTP.post(url,body,options)
