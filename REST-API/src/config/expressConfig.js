@@ -1,4 +1,4 @@
-expiorts.expressConfig = (server) => {
+exports.expressConfig = (server) => {
   server.use(express.urlencoded({ extended: true }));
   app.use(express.json());
 
@@ -15,7 +15,6 @@ expiorts.expressConfig = (server) => {
   };
   const allowedOrigins = [
     "http://localhost:4200",
-    "https://viktorshandrov.github.io",
   ];
   app.use(
     cors({
