@@ -13,11 +13,13 @@ exports.register = async (email,username,password,repetedPassword) =>{
     if(user){
         throw new Error("User with same email already exists")
     }
+    const newUser = await userModel.create({email,username,password,repetedPassword})
 
-    return await userModel.create({email,username,password,repetedPassword})
+    
+    return login(email,password)
 
 }
-exports.login = async(email,password)=>{
+const login = async(email,password)=>{
     const user = await userModel.findOne({email})
     if(!user){
         throw new Error("Email or password is incorrect")
@@ -31,3 +33,4 @@ exports.login = async(email,password)=>{
 
     return  utils.sign({email,_id:user._id},utils.secret)
 }
+exports.login

@@ -18,9 +18,9 @@ router.get("/login",async (req, res) => {
 router.get("/register", async (req, res) => {
     try {
         const {email,username,password,repetedPassword} = req.body
-        const newUser = await usersManager.register(email,username,password,repetedPassword)
+        const token = await usersManager.register(email,username,password,repetedPassword)
 
-    res.status(200).json({message:"Successfully registered"}) 
+    res.status(200).json({message:"Successfully registered", token }) 
     } catch (error) {
         res.status(400).json({error:error.message}) 
     }
