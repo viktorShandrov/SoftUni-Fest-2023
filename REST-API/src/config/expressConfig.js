@@ -1,6 +1,12 @@
+const express = require("express");
+const cors = require("cors");
+const {auth} = require("../utils/auth.js")
+const mainRouter = require("../mainRouter.js")
+
+
 exports.expressConfig = (server) => {
   server.use(express.urlencoded({ extended: true }));
-  app.use(express.json());
+  server.use(express.json());
 
   const corsMiddleware = (req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");
@@ -16,11 +22,11 @@ exports.expressConfig = (server) => {
   const allowedOrigins = [
     "http://localhost:4200",
   ];
-  app.use(
+  server.use(
     cors({
       origin: allowedOrigins,
     })
   );
-  app.use(auth);
-  app.use(router);
+  server.use(auth);
+  server.use(mainRouter);
 };
