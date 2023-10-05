@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { SharedModule } from '../shared/shared.module';
 import {TokenInterceptor} from "./interseptors/token.interceptor";
+import {BottomComponent} from "./components/bottom/bottom.component";
+import {UsersComponent} from "./components/bottom/users/users.component";
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent],
+  declarations: [BottomComponent,UsersComponent,UsersComponent],
   imports: [
     CommonModule,
     SharedModule
