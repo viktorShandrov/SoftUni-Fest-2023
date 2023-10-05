@@ -1,15 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {FooterComponent} from "./core/components/footer/footer.component";
+import { MainComponent } from './featured/main/main.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full',component:FooterComponent },
+  { path: '', pathMatch: 'full', component: MainComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule {
-
-}
+export class AppRoutingModule {}
