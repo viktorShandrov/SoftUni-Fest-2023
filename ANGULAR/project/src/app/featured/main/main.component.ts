@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
 export class MainComponent {
   onSubmit() {
     console.log(222);
+    console.log(3333)
   }
 }
