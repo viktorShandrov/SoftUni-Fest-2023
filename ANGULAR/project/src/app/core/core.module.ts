@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
-import {TokenInterceptor} from "./interseptors/token.interceptor";
-import {BottomComponent} from "./components/bottom/bottom.component";
-import {UsersComponent} from "./components/bottom/users/users.component";
+import { TokenInterceptor } from './interseptors/token.interceptor';
+import { BottomComponent } from './components/bottom/bottom.component';
+import { UsersComponent } from './components/bottom/users/users.component';
+
+const viktor = 1;
 
 @NgModule({
-  declarations: [BottomComponent,UsersComponent,UsersComponent],
-  imports: [
-    CommonModule,
-    SharedModule
-  ],
+  declarations: [BottomComponent, UsersComponent, UsersComponent],
+  imports: [CommonModule, SharedModule],
 })
 export class CoreModule {}
