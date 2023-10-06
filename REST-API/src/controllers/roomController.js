@@ -15,6 +15,17 @@ router.post("/createRoom",isAuth,async (req,res)=>{
     }
 
 })
+router.post("/deleteRoom",isAuth,async (req,res)=>{
+    try {
+        const {roomId} = req.body
+        const {_id} =req.user
+        await roomManager.deleteRoom(roomId,_id)
+        res.status(200).end()
+    }catch (error){
+        res.status(400).json({message:error.message})
+    }
+
+})
 router.post("/joinRoom/:roomId",isAuth,async (req,res)=>{
     try {
         const {roomId} = req.params

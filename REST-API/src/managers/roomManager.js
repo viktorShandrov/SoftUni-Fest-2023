@@ -7,6 +7,14 @@ const bcrypt = require("bcrypt")
 exports.createRoom=async (roomName,owner)=>{
     return roomModel.create({name:roomName,owner})
 }
+exports.deleteRoom=async (roomId,userId)=>{
+    const room = await roomModel.findById(roomId)
+    if(!room) throw new Error("No such room")
+
+    if(!userId.equals(room.owner)) throw new Error("You are not the owner of this room")
+
+    return roomModel.findByIdAndDelete(roomId)
+}
 exports.addMessageToRoom=async (roomId,messageId)=>{
     const room = await roomModel.findById(roomId)
     if(!room) throw new Error("No such room")
