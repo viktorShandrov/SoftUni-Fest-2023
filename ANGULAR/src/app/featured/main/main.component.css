@@ -1,0 +1,19 @@
+main {
+  display: flex;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  width: 30%;
+  height: 100vh;
+  padding: 1.5em;
+  background-color: #2a4483;
+}
+
+.chat {
+  background-color: #0c1326;
+  width: 85%;
+  height: 100vh;
+}

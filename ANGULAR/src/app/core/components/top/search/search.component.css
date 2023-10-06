@@ -1,0 +1,8 @@
+.search-container input {
+  padding: 0.3em;
+  border-radius: 5em;
+  text-indent: 0.5em;
+  line-height: 1.8em;
+  width: 200%;
+  border: none;
+}
