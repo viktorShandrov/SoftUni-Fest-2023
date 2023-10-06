@@ -1,13 +1,14 @@
 const express = require("express");
 const usersManager = require("../managers/usersManager");
+const roomManager = require("../managers/roomManager");
 
 const router = express.Router();
 
 router.post("/login",async (req, res) => {
     try {
             const {email,password} = req.body
-        console.log(req.body)
             const token = await usersManager.login(email,password)
+
 
             res.status(200).json({message:"Successfully logged in",token})
 
