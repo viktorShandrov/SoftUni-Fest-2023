@@ -1,17 +1,13 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { MainComponent } from './main/main.component';
-import {FormsModule} from "@angular/forms";
 
-
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { CoreModule } from '../core/core.module';
 
 @NgModule({
-  declarations: [
-    MainComponent
-  ],
-  imports: [
-    CommonModule,
-    FormsModule
-  ]
+  declarations: [MainComponent],
+  imports: [CommonModule, FormsModule, CoreModule],
 })
-export class FeaturedModule { }
+export class FeaturedModule {}
