@@ -5,8 +5,48 @@ const roomManager = require("../managers/roomManager");
 const router = express.Router();
 
 router.post("/createRoom",isAuth,async (req,res)=>{
-    const {roomName} = req.body
-    await roomManager.createRoom(roomName)
+    try {
+        const {roomName} = req.body
+        const {_id} =req.user
+        await roomManager.createRoom(roomName,_id)
+        res.status(200).end()
+    }catch (error){
+        res.status(400).json({message:error.message})
+    }
+
+})
+router.post("/deleteRoom",isAuth,async (req,res)=>{
+    try {
+        const {roomId} = req.body
+        const {_id} =req.user
+        await roomManager.deleteRoom(roomId,_id)
+        res.status(200).end()
+    }catch (error){
+        res.status(400).json({message:error.message})
+    }
+
+})
+router.post("/joinRoom/:roomId",isAuth,async (req,res)=>{
+    try {
+        const {roomId} = req.params
+        const {_id} =req.user
+        await roomManager.joinRoom(roomId,_id)
+        res.status(200).end()
+    }catch (error){
+        res.status(400).json({message:error.message})
+    }
+
+})
+router.post("/leaveRoom",isAuth,async (req,res)=>{
+    try {
+        const {roomId} = req.params
+        const {_id} =req.user
+        await roomManager.leaveRoom(roomId,_id)
+        res.status(200).end()
+    }catch (error){
+        res.status(400).json({message:error.message})
+    }
+
 })
 
 

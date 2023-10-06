@@ -1,10 +1,12 @@
 const express = require("express");
 const userController = require("./controllers/usersController.js");
-const itemsController = require("./controllers/roomController.js");
+const roomController = require("./controllers/roomController.js");
+const messageController = require("./controllers/messageController");
 
 const mainRouter = express.Router();
 
 mainRouter.use("/users", userController);
-mainRouter.use("/items", itemsController);
+mainRouter.use("/rooms", roomController);
+mainRouter.use("/messages", messageController);
 
 module.exports = mainRouter;
