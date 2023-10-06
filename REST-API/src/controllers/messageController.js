@@ -7,10 +7,16 @@ const router = express.Router();
 
 
 router.post("/createMessage",isAuth,async (req,res)=>{
-    const {messageText,roomId} = req.body
-    const {_id}= req.user
-    const newMessage = await messageManager.createMessage(messageText,_id)
-    await roomManager.addMessageToRoom(roomId,newMessage._id)
+    try{
+        const {messageText,roomId} = req.body
+        const {_id}= req.user
+        const newMessage = await messageManager.createMessage(messageText,_id)
+        await roomManager.addMessageToRoom(roomId,newMessage._id)
+        res.status(200).end()
+    }catch (error){
+    res.status(400).json({message:error.message})
+}
+
 })
 
 module.exports = router;
