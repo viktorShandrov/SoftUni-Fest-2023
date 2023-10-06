@@ -4,8 +4,8 @@ const messageModel = require("../models/messageModel")
 const bcrypt = require("bcrypt")
 
 
-exports.createRoom=async (roomName)=>{
-    return roomModel.create({name:roomName})
+exports.createRoom=async (roomName,owner)=>{
+    return roomModel.create({name:roomName,owner})
 }
 exports.addMessageToRoom=async (roomId,messageId)=>{
     const room = await roomModel.findById(roomId)
@@ -14,4 +14,10 @@ exports.addMessageToRoom=async (roomId,messageId)=>{
     room.messages.push(message)
     return room.save()
 
+}
+exports.joinRoom = async (roomId,userId)=>{
+    const room = await roomModel.findById(roomId)
+    if(!room) throw new Error("No such room")
+    room.members.push(userId)
+    return room.save()
 }
