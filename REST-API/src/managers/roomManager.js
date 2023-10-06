@@ -21,3 +21,13 @@ exports.joinRoom = async (roomId,userId)=>{
     room.members.push(userId)
     return room.save()
 }
+exports.leaveRoom = async (roomId,userId)=>{
+    const room = await roomModel.findById(roomId)
+    if(!room) throw new Error("No such room")
+
+    const userIndex = room.members.indexOf(userId)
+    if(userIndex<0) throw new Error("No such user in room")
+
+    room.members.splice(userIndex,1)
+    return room.save()
+}

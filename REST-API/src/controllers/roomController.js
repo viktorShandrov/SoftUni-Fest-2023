@@ -26,6 +26,17 @@ router.post("/joinRoom/:roomId",isAuth,async (req,res)=>{
     }
 
 })
+router.post("/leaveRoom",isAuth,async (req,res)=>{
+    try {
+        const {roomId} = req.params
+        const {_id} =req.user
+        await roomManager.leaveRoom(roomId,_id)
+        res.status(200).end()
+    }catch (error){
+        res.status(400).json({message:error.message})
+    }
+
+})
 
 
 module.exports = router;
