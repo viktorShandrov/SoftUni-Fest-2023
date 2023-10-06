@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./main.component.css'],
 })
 export class MainComponent {
+  ivan:string = "ww"
   onSubmit() {
     console.log(222);
     console.log(3333)

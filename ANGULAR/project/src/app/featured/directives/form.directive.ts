@@ -1,11 +1,12 @@
 import { Directive, ElementRef, Input, Renderer2 } from '@angular/core';
 
 @Directive({
-  selector: '[appForm]',
+  selector: '[appFormElement]',
 })
 export class FormDirective {
-  @Input('onSubmit') onSubmit!: any;
+  @Input('ivan') submission: any ;
+
   constructor(private element: ElementRef, private Renderer2: Renderer2) {
-    this.Renderer2.listen('submit', this.element.nativeElement, this.onSubmit);
+    this.Renderer2.listen(this.element.nativeElement, 'submit', this.submission);
   }
 }
