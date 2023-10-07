@@ -1,8 +1,12 @@
 .fa-bars {
   font-size: 1.6em;
-  color: rgb(206, 206, 206);
+  color: rgb(213, 213, 213);
 }
 
 .fa-bars:hover {
-  color: rgb(242, 242, 242);
+  color: rgb(255, 255, 255);
+}
+
+.offcanvas {
+  background-color: #adb5bd;
 }

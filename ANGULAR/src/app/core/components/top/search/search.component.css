@@ -6,3 +6,7 @@
   width: 200%;
   border: none;
 }
+
+.search-container input:focus {
+  outline: none;
+}
