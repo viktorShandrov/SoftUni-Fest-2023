@@ -43,7 +43,7 @@ exports.leaveRoom = async (roomId,userId)=>{
 exports.sendAllRoomMessages=async(roomId,userId)=>{
     const room = await roomModel.findById(roomId).populate("messages")
     if(!room) throw new Error("No such room")
-    if(!room.members.inludes(userId)) throw new Error("No such member in room")
+    if(!room.members.includes(userId)) throw new Error("No such member in room")
     return  room.messages
 }
 exports.socketConnToRoom =async (roomId)=>{

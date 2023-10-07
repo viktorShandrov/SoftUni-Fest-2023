@@ -19,6 +19,10 @@ export class MainComponent implements OnInit{
   ngOnInit() {
     this.socket = io("http://localhost:3000")
     // Subscribe to events or perform other setup here
+    this.socket.emit("connectToRoom",{
+      roomId:"652054e08b09208c8df493f4",
+      userId:"652054d58b09208c8df493f0"
+    })
     this.socket.on('connect', () => {
       console.log('Connected to WebSocket server');
     });
