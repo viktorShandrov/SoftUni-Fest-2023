@@ -7,6 +7,7 @@ import { Component, ElementRef, Renderer2 } from '@angular/core';
 })
 export class UsersComponent {
   constructor(private elementRef: ElementRef, private renderer2: Renderer2) {
-    renderer2.setStyle(elementRef.nativeElement, 'flex', 1);
+    renderer2.setStyle(elementRef.nativeElement, 'flex', "1");
+    renderer2.setStyle(elementRef.nativeElement, 'height', "100%");
   }
 }

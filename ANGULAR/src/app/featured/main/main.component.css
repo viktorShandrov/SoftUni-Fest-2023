@@ -8,6 +8,7 @@ main {
   flex-direction: column;
   gap: 1.2em;
   width: 30%;
+  height: 100vh;
   background-color: #6c757d;
 }
 
