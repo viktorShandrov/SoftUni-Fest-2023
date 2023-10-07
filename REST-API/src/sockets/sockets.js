@@ -17,9 +17,14 @@ exports.socketIoConnect=(server)=>{
         })
         io.on("connection",(socket)=>{
             socket.on("connectToRoom",async({roomId,userId})=>{
-                const messages = await roomManager.sendAllRoomMessages(roomId,userId)
-                socket.join(roomId)
-                io.to(socket.id).emit("messages",messages)
+                try {
+                    const messages = await roomManager.sendAllRoomMessages(roomId, userId)
+                    socket.join(roomId)
+                    io.to(socket.id).emit("messages", messages)
+                }
+                catch(error){
+                    io.to(socket.id).emit("error",error.message)
+                }
             })
             socket.on("createMessage",async({messageText, roomId,userId})=>{
                 try{
@@ -27,7 +32,7 @@ exports.socketIoConnect=(server)=>{
                     await roomManager.addMessageToRoom(roomId, newMessage._id)
                     io.to(roomId).emit("newMessage",newMessage)
                 }catch(error){
-
+                    io.to(socket.id).emit("error",error.message)
                 }
             })
         })

@@ -32,6 +32,9 @@ const login = async(email,password)=>{
         throw new Error("Email or password is incorrect")
     }
 
-    return  utils.sign({email,_id:user._id},utils.secret)
+    return {
+        token:utils.sign({email, _id: user._id}, utils.secret),
+        userId:user._id
+    }
 }
 exports.login = login

@@ -15,5 +15,21 @@ main {
 
 .chat {
   background-color: #343a40;
+  display: flex;
+  flex-direction: column;
   width: 85%;
+  height: 100vh;
+
+}
+.chat .messages{
+  flex: 1 ;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px  ;
+  overflow-y: scroll;
+ justify-content: end;
+}
+.chat .messages .messagesContainer{
+overflow-y: visible;
 }
