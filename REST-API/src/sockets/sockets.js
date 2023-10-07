@@ -1,10 +1,18 @@
-const io = require("socket.io")(3000,{
-    cors:{
-        origin:["http://localhost:4200"]
-    }
+// const server = require("../server");
 
-})
 
-io.on("connection",(socket)=>{
-    console.log(socket.id)
-})
+module.exports = function socketIoConnect(server){
+    const io = require("socket.io")(server,{
+        cors:{
+            origin:["http://localhost:4200"],
+            methods: ["GET", "POST"]
+        }
+
+    })
+
+    io.on("connection",(socket)=>{
+        console.log(socket.id)
+    })
+}
+
+
