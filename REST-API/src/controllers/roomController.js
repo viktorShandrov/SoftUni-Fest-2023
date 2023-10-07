@@ -48,18 +48,18 @@ router.post("/leaveRoom",isAuth,async (req,res)=>{
     }
 
 })
-router.post("/connectToRoom",isAuth,async (req,res)=>{
-    try {
-        const {roomId} = req.body
-        const {_id} =req.user
-        const messages = await roomManager.sendAllRoomMessages(roomId,_id)
-        res.status(200).json({messages})
-        roomManager.socketConnToRoom(roomId)
-    }catch (error){
-        res.status(400).json({message:error.message})
-    }
-
-})
+// router.post("/connectToRoom",isAuth,async (req,res)=>{
+//     try {
+//         const {roomId} = req.body
+//         const {_id} =req.user
+//         const messages = await roomManager.sendAllRoomMessages(roomId,_id)
+//         res.status(200).json({messages})
+//         roomManager.socketConnToRoom(roomId)
+//     }catch (error){
+//         res.status(400).json({message:error.message})
+//     }
+//
+// })
 
 
 
