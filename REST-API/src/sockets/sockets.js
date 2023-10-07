@@ -22,9 +22,13 @@ exports.socketIoConnect=(server)=>{
                 io.to(socket.id).emit("messages",messages)
             })
             socket.on("createMessage",async({messageText, roomId,userId})=>{
-                const newMessage = await messageManager.createMessage(messageText, userId)
-                await roomManager.addMessageToRoom(roomId, newMessage._id)
-                io.to(roomId).emit("newMessage",newMessage)
+                try{
+                    const newMessage = await messageManager.createMessage(messageText, userId)
+                    await roomManager.addMessageToRoom(roomId, newMessage._id)
+                    io.to(roomId).emit("newMessage",newMessage)
+                }catch(error){
+
+                }
             })
         })
     }catch (e) {
