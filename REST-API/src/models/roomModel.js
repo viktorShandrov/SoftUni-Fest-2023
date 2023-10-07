@@ -7,7 +7,7 @@ const schema = new mongoose.Schema({
     },
     members:[{
         type:mongoose.Types.ObjectId,
-        ref:"user"
+        ref:"User"
     }],
     createdAt:{
         type:Date,
@@ -15,12 +15,12 @@ const schema = new mongoose.Schema({
     },
     owner: {
         type: mongoose.Types.ObjectId,
-        ref: "user"
+        ref: "User"
     },
     messages:[
         {
             type:mongoose.Types.ObjectId,
-            ref:"message"
+            ref:"Message"
         }
     ]
 
