@@ -1,5 +1,7 @@
 main {
   display: flex;
+  color: white;
+  overflow-y: hidden;
 }
 
 .navigation {
@@ -7,13 +9,10 @@ main {
   flex-direction: column;
   gap: 1.2em;
   width: 30%;
-  height: 100vh;
-  padding: 1.5em;
-  background-color: #2a4483;
+  background-color: #6c757d;
 }
 
 .chat {
-  background-color: #0c1326;
+  background-color: #343a40;
   width: 85%;
-  height: 100vh;
 }
