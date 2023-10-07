@@ -2,6 +2,7 @@ const express = require("express");
 const {isAuth} = require("../utils/auth");
 const roomManager = require("../managers/roomManager");
 const messageManager = require("../managers/messageManager");
+const {io} = require("../sockets/sockets");
 
 const router = express.Router();
 
@@ -12,6 +13,7 @@ router.post("/createMessage",isAuth,async (req,res)=> {
         const {_id} = req.user
         const newMessage = await messageManager.createMessage(messageText, _id)
         await roomManager.addMessageToRoom(roomId, newMessage._id)
+        io.to(roomId).emit("newMessage",message)
         res.status(200).end()
     } catch (error) {
         res.status(400).json({message: error.message})
