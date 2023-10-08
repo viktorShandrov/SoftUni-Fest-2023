@@ -5,17 +5,26 @@
   </div>
 
   <div class="chat">
-     <div class="messages">
-       <div class="messagesContainer">
-         <div *ngFor="let message of CacheService.messages" class="message">{{message.text}}</div>
-         <div *ngFor="let message of CacheService.messages" class="message">{{message.text}}</div>
-
-       </div>
+    <div class="messages">
+      <div class="messagesContainer" *ngIf="CacheService.messages">
+        <div *ngFor="let message of CacheService.messages" class="message">
+          <div class="message-content">{{ message.text }}</div>
+        </div>
+      </div>
+      <div class="select-message" *ngIf="!CacheService.messages">
+        Select a chat to start messaging.
+      </div>
     </div>
 
     <div class="chat-input">
-      <input type="text" />
-      <button></button>
+      <label class="file-label">
+        <input type="file" style="display: none; cursor: pointer" />
+        <i class="fas fa-paperclip fa"></i>
+      </label>
+      <input class="messaging" type="text" placeholder="Write a message..." />
+      <i class="far fa-smile fa"></i>
+      <i class="fas fa-microphone fa"></i>
+      <i class="fas fa-paper-plane fa"></i>
     </div>
   </div>
 </main>
