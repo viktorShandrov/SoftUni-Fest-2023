@@ -61,7 +61,6 @@ export class MainComponent implements OnInit {
   }
   scrollToBottom(){
     const value = this.messagesContainer.nativeElement.scrollHeight
-    console.log(value)
     this.messagesContainer.nativeElement.scrollTop = value
     // console.log(value)
     console.log(this.messagesContainer.nativeElement.scrollTop)
