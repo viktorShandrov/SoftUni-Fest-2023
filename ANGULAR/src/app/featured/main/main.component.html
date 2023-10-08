@@ -3,16 +3,35 @@
     <app-top></app-top>
     <app-users></app-users>
   </div>
-  <div class="chat">
+  <div *ngIf="!CacheService.currentRoomId" class="noSelectedRoomContainer">
+    <div class="message">Select room</div>
+  </div>
+  <div *ngIf="CacheService.currentRoomId" class="chat">
     <div class="messages">
-      <div class="messagesContainer" *ngIf="CacheService.messages">
+      <div #messagesContainer class="messagesContainer">
         <div *ngFor="let message of CacheService.messages" class="message">
-          <div class="message-content">{{ message.text }}</div>
+          {{ message.text }}
         </div>
       </div>
-      <div class="select-message" *ngIf="!CacheService.messages">
-        Select a chat to start messaging.
-      </div>
     </div>
+
+    <form #form="ngForm" class="chat-input" (ngSubmit)="onMessageSubmit(form)">
+      <label class="file-label">
+        <input type="file" style="display: none; cursor: pointer" />
+        <i class="fas fa-paperclip fa"></i>
+      </label>
+      <input
+        type="text"
+        class="messaging"
+        name="message"
+        ngModel
+        required
+        placeholder="Write a message..."
+      />
+      <button type="submit">SEND</button>
+      <i class="far fa-smile fa"></i>
+      <i class="fas fa-microphone fa"></i>
+      <i class="fas fa-paper-plane fa"></i>
+    </form>
   </div>
 </main>
