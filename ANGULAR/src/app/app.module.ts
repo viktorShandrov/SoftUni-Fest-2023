@@ -7,6 +7,9 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { FeaturedModule } from './featured/featured.module';
 import { FormsModule } from '@angular/forms';
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {ApiInterceptor} from "./core/interceptors/api.interceptor";
+import {TokenInterceptor} from "./core/interceptors/token.interceptor";
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,8 +20,21 @@ import { FormsModule } from '@angular/forms';
     CoreModule,
     FeaturedModule,
     FormsModule,
+    HttpClientModule
+
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiInterceptor, // Use your interceptor class here
+      multi: true, // Set this to true to allow multiple interceptors
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor, // Use your interceptor class here
+      multi: true, // Set this to true to allow multiple interceptors
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

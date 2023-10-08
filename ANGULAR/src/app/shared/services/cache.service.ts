@@ -6,5 +6,6 @@ import { Injectable } from '@angular/core';
 export class CacheService {
   messages!:any
   socket!:any
+  rooms!:any
   constructor() { }
 }

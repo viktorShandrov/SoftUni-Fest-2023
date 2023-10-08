@@ -40,6 +40,13 @@ exports.leaveRoom = async (roomId,userId)=>{
     room.members.splice(userIndex,1)
     return room.save()
 }
+exports.giveJoinedRooms = async (userId)=>{
+    const rooms = await roomModel.find({
+        members: userId
+    })
+
+    return rooms
+}
 exports.sendAllRoomMessages=async(roomId,userId)=>{
     const room = await roomModel.findById(roomId).populate("messages")
     if(!room) throw new Error("No such room")

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Form } from '@angular/forms';
 import { io } from 'socket.io-client';
 import { CacheService } from '../../shared/services/cache.service';
+import {HttpService} from "../../shared/services/http.service";
 
 @Component({
   selector: 'app-main',
@@ -10,7 +11,11 @@ import { CacheService } from '../../shared/services/cache.service';
 })
 export class MainComponent implements OnInit {
   private socket: any;
-  constructor(public CacheService: CacheService) {}
+  constructor(
+    public CacheService: CacheService,
+    private HttpService: HttpService,
+
+    ) {}
 
   onSubmit(form: any) {
     console.log(form.value);
@@ -18,6 +23,20 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     this.socket = io('http://localhost:3000');
     this.CacheService.socket = this.socket;
+
+    this.HttpService.getRequest("api/rooms/giveJoinedRooms").subscribe(
+      (res:any)=>{
+        this.CacheService.rooms = res.rooms
+      },
+      error=>{
+        console.log(error)
+      }
+    )
+
+
+
+
+
     // Subscribe to events or perform other setup here
     this.socket.on('connect', () => {
       console.log('Connected to WebSocket server');

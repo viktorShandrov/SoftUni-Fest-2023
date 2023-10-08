@@ -1,4 +1,5 @@
 import { Component, ElementRef, Renderer2 } from '@angular/core';
+import {CacheService} from "../../../../shared/services/cache.service";
 
 @Component({
   selector: 'app-users',
@@ -6,7 +7,10 @@ import { Component, ElementRef, Renderer2 } from '@angular/core';
   styleUrls: ['./users.component.css'],
 })
 export class UsersComponent {
-  constructor(private elementRef: ElementRef, private renderer2: Renderer2) {
+  constructor(
+    private elementRef: ElementRef,
+    public CacheService: CacheService,
+    private renderer2: Renderer2) {
     renderer2.setStyle(elementRef.nativeElement, 'flex', "1");
     renderer2.setStyle(elementRef.nativeElement, 'height', "100%");
   }
