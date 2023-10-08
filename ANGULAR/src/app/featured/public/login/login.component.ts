@@ -9,7 +9,9 @@ import {UserService} from "../../../shared/services/user.service";
 export class LoginComponent {
   constructor(
     private UserService:UserService
-  ) {}
+  ) {
+    localStorage.clear()
+  }
   onSubmit(form:any){
     this.UserService.login(form.value.email,form.value.password)
   }
