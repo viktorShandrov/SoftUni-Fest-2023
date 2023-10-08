@@ -7,8 +7,8 @@
     <div class="message">Select room</div>
   </div>
   <div *ngIf="CacheService.currentRoomId" class="chat">
-    <div class="messages">
-      <div #messagesContainer class="messagesContainer">
+    <div #messagesContainer class="messages">
+      <div  class="messagesContainer">
         <div *ngFor="let message of CacheService.messages" class="message">
           {{ message.text }}
         </div>

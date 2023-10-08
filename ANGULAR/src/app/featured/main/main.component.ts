@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core';
 import { Form } from '@angular/forms';
 import { io } from 'socket.io-client';
 import { CacheService } from '../../shared/services/cache.service';
@@ -15,6 +15,7 @@ export class MainComponent implements OnInit {
   @ViewChild("messagesContainer") messagesContainer!:ElementRef
   constructor(
     public CacheService: CacheService,
+    private Renderer2: Renderer2,
     public UserService: UserService,
     private HttpService: HttpService,
 
@@ -62,8 +63,6 @@ export class MainComponent implements OnInit {
   scrollToBottom(){
     const value = this.messagesContainer.nativeElement.scrollHeight
     this.messagesContainer.nativeElement.scrollTop = value
-    // console.log(value)
-    console.log(this.messagesContainer.nativeElement.scrollTop)
   }
 
   onMessageSubmit(form:any){
