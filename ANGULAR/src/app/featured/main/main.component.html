@@ -14,9 +14,21 @@
     </div>
 
     <form #form="ngForm" class="chat-input" (ngSubmit)="onMessageSubmit(form)">
-      <input type="text" name="message" ngModel  required />
+      <label class="file-label">
+        <input type="file" style="display: none; cursor: pointer" />
+        <i class="fas fa-paperclip fa"></i>
+      </label>
+      <input type="text" class="messaging" name="message" ngModel  required placeholder="Write a message..." />
       <button type="submit">SEND</button>
+      <i class="far fa-smile fa"></i>
+      <i class="fas fa-microphone fa"></i>
+      <i class="fas fa-paper-plane fa"></i>
     </form>
+    <div class="chat-input">
+
+
+
+    </div>
   </div>
 </main>
 
