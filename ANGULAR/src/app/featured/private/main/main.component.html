@@ -3,12 +3,13 @@
     <app-top></app-top>
     <app-users></app-users>
   </div>
+
   <div *ngIf="!CacheService.currentRoomId" class="noSelectedRoomContainer">
-    <div class="message">Select room</div>
+    <div class="select-message">Select a chat to start messaging</div>
   </div>
   <div *ngIf="CacheService.currentRoomId" class="chat">
     <div appHtmlElement #messagesContainer class="messagesContainer">
-      <div  class="messages">
+      <div class="messages">
         <div *ngFor="let message of CacheService.messages" class="message">
           {{ message.text }}
         </div>
@@ -31,7 +32,6 @@
       <i class="far fa-smile fa"></i>
       <i class="fas fa-microphone fa"></i>
       <button type="submit"><i class="fas fa-paper-plane fa"></i></button>
-
     </form>
   </div>
 </main>

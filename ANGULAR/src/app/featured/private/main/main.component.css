@@ -11,9 +11,6 @@ main {
   height: 100vh;
   background-color: #6c757d;
 }
-.noSelectedRoomContainer .message{
-  color: black;
-}
 
 .chat {
   background-color: #343a40;
@@ -30,9 +27,9 @@ main {
   margin-left: 2em;
   padding: 1em;
 }
-button{
+button {
   all: unset;
- }
+}
 
 .messages {
   display: flex;
@@ -70,13 +67,23 @@ button{
   outline: none;
 }
 
-.select-message {
+.noSelectedRoomContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  width: 70%;
+  height: 100vh;
+  background-color: #343a40;
   color: #a1a8b0;
-  font-size: 1.2em;
+}
+
+.select-message {
+  padding: 0.5em;
+  font-size: 1em;
+  background-color: #a1a8b0;
+  color: #343a40;
+  border-radius: 5em;
+  font-weight: bold;
 }
 
 .fa {
