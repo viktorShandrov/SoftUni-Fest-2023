@@ -14,6 +14,9 @@ export class RoomJoinDirective {
   ) {
     this.Renderer2.listen(this.element.nativeElement, 'click', () => {
       const roomId = this.element.nativeElement.getAttribute("roomid")
+      this.CacheService.currentRoomEl = this.element.nativeElement
+      this.CacheService.currentRoomId = roomId
+
       this.CacheService.socket.emit('connectToRoom', {
         roomId,
         userId: this.UserService.getUserId(),
