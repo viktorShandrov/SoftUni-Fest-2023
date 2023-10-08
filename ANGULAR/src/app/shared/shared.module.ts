@@ -6,7 +6,7 @@ import { RoomJoinDirective } from './directives/room-join.directive';
 
 @NgModule({
   declarations: [
-    RoomJoinDirective
+    RoomJoinDirective,
   ],
   imports: [
     CommonModule

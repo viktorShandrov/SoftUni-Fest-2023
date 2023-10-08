@@ -33,7 +33,7 @@ const login = async(email,password)=>{
     }
 
     return {
-        token:utils.sign({email, _id: user._id}, utils.secret),
+        token:await utils.sign({email, _id: user._id}, utils.secret),
         userId:user._id
     }
 }

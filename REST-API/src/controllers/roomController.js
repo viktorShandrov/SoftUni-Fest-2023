@@ -48,6 +48,17 @@ router.post("/leaveRoom",isAuth,async (req,res)=>{
     }
 
 })
+router.get("/giveJoinedRooms",isAuth,async (req,res)=>{
+    try {
+        const {_id} =req.user
+        const rooms = await roomManager.giveJoinedRooms(_id)
+        res.status(200).json({rooms})
+    }catch (error){
+        console.log(error);
+        res.status(400).json({message:error.message})
+    }
+
+})
 // router.post("/connectToRoom",isAuth,async (req,res)=>{
 //     try {
 //         const {roomId} = req.body
