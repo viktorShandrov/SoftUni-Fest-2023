@@ -61,15 +61,16 @@ export class MainComponent implements OnInit {
   }
   scrollToBottom(){
     this.messagesContainer.nativeElement.scrollTop = this.messagesContainer.nativeElement.scrollHeight
+    console.log( this.messagesContainer.nativeElement.scrollHeight)
+    console.log(this.messagesContainer.nativeElement.scrollTop)
   }
 
   onMessageSubmit(form:any){
-    const value = form.form.value.message
-    form.form.reset()
     this.socket.emit('createMessage', {
-      messageText: value,
+      messageText: form.form.value.message,
       roomId: this.CacheService.currentRoomId,
       userId: this.UserService.getUserId(),
     });
+    form.form.reset()
   }
 }
