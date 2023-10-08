@@ -1,6 +1,7 @@
 const express = require("express");
 const usersManager = require("../managers/usersManager");
 const roomManager = require("../managers/roomManager");
+const {isAuth} = require("../utils/auth");
 
 const router = express.Router();
 
@@ -27,5 +28,8 @@ router.post("/register", async (req, res) => {
     }
     
 });
+router.get("/isTokenValid",isAuth,(req,res)=>{
+    res.status(200).json({valid:true})
+})
 
 module.exports = router;

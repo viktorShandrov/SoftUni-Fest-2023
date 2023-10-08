@@ -1,9 +1,10 @@
-import {Component, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild} from '@angular/core';
 import { Form } from '@angular/forms';
 import { io } from 'socket.io-client';
-import { CacheService } from '../../shared/services/cache.service';
-import {HttpService} from "../../shared/services/http.service";
-import {UserService} from "../../shared/services/user.service";
+import { CacheService } from '../../../shared/services/cache.service';
+import {HttpService} from "../../../shared/services/http.service";
+import {UserService} from "../../../shared/services/user.service";
+import {ChatService} from "../../../shared/services/chat.service";
 
 @Component({
   selector: 'app-main',
@@ -17,6 +18,7 @@ export class MainComponent implements OnInit {
     public CacheService: CacheService,
     private Renderer2: Renderer2,
     public UserService: UserService,
+    private ChatService: ChatService,
     private HttpService: HttpService,
 
     ) {}
@@ -50,7 +52,7 @@ export class MainComponent implements OnInit {
       this.socket.on('newMessage', (message: any) => {
         this.CacheService.messages.push(message)
         setTimeout(()=>{
-          this.scrollToBottom()
+          this.ChatService.scrollToBottom()
         },0)
       });
     });
@@ -60,10 +62,8 @@ export class MainComponent implements OnInit {
       console.log('Disconnected from WebSocket server');
     });
   }
-  scrollToBottom(){
-    const value = this.messagesContainer.nativeElement.scrollHeight
-    this.messagesContainer.nativeElement.scrollTop = value
-  }
+
+
 
   onMessageSubmit(form:any){
     this.socket.emit('createMessage', {

@@ -1,6 +1,7 @@
 import { Directive, ElementRef, Renderer2 } from '@angular/core';
 import { CacheService } from '../services/cache.service';
 import {UserService} from "../services/user.service";
+import {ChatService} from "../services/chat.service";
 
 @Directive({
   selector: '[appRoomJoin]',
@@ -10,6 +11,7 @@ export class RoomJoinDirective {
     private element: ElementRef,
     private Renderer2: Renderer2,
     private UserService: UserService,
+    private ChatService: ChatService,
     private CacheService: CacheService
   ) {
     this.Renderer2.listen(this.element.nativeElement, 'click', () => {
@@ -23,6 +25,9 @@ export class RoomJoinDirective {
       });
       this.CacheService.socket.on('messages', (messages: any) => {
         this.CacheService.messages = messages;
+        setTimeout(()=>{
+          this.ChatService.scrollToBottom()
+        },0)
       });
     });
   }

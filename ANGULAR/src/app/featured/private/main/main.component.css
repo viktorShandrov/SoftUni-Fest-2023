@@ -23,15 +23,18 @@ main {
   height: 100vh;
 }
 
-.chat .messages {
+.chat .messagesContainer {
   flex: 1;
   height: 100%;
   overflow-y: scroll;
   margin-left: 2em;
   padding: 1em;
 }
+button{
+  all: unset;
+ }
 
-.messagesContainer {
+.messages {
   display: flex;
   flex-direction: column;
   gap: 0.7em;
