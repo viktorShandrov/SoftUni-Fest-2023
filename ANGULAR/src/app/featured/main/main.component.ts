@@ -42,17 +42,11 @@ export class MainComponent implements OnInit {
     // Subscribe to events or perform other setup here
     this.socket.on('connect', () => {
       console.log('Connected to WebSocket server');
-      // this.socket.emit('connectToRoom', {
-      //   roomId: '65215f214903201a01353d04',
-      //   userId: '652160174903201a01353d28',
-      // });
-
 
       this.socket.on('error', (message: string) => {
         console.log(message);
       });
       this.socket.on('newMessage', (message: any) => {
-        console.log(message);
         this.CacheService.messages.push(message)
         setTimeout(()=>{
           this.scrollToBottom()
@@ -66,10 +60,11 @@ export class MainComponent implements OnInit {
     });
   }
   scrollToBottom(){
-    this.messagesContainer.nativeElement.scrollTop =     this.messagesContainer.nativeElement.scrollHeight
+    this.messagesContainer.nativeElement.scrollTop = this.messagesContainer.nativeElement.scrollHeight
   }
 
   onMessageSubmit(form:any){
+    form.nativeElement.reset()
     this.socket.emit('createMessage', {
       messageText: form.value.message,
       roomId: this.CacheService.currentRoomId,

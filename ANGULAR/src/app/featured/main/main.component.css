@@ -11,6 +11,9 @@ main {
   height: 100vh;
   background-color: #6c757d;
 }
+.noSelectedRoomContainer .message{
+  color: black;
+}
 
 .chat {
   background-color: #343a40;
