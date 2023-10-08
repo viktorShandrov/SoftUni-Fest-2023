@@ -28,6 +28,7 @@ exports.socketIoConnect=(server)=>{
             })
             socket.on("createMessage",async({messageText, roomId,userId})=>{
                 try{
+                    console.log(messageText);
                     const newMessage = await messageManager.createMessage(messageText, userId)
                     await roomManager.addMessageToRoom(roomId, newMessage._id)
                     io.to(roomId).emit("newMessage",newMessage)

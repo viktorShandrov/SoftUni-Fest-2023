@@ -64,9 +64,10 @@ export class MainComponent implements OnInit {
   }
 
   onMessageSubmit(form:any){
-    form.nativeElement.reset()
+    const value = form.form.value.message
+    form.form.reset()
     this.socket.emit('createMessage', {
-      messageText: form.value.message,
+      messageText: value,
       roomId: this.CacheService.currentRoomId,
       userId: this.UserService.getUserId(),
     });
