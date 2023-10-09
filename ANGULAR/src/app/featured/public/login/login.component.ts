@@ -12,7 +12,10 @@ export class LoginComponent {
   ) {
     localStorage.clear()
   }
-  onSubmit(form:any){
+  onLoginSubmit(form:any){
     this.UserService.login(form.value.email,form.value.password)
+  }
+  onRegisterSubmit(form:any){
+    this.UserService.register(form.value.email,form.value.password,form.value.repeatedPassword)
   }
 }

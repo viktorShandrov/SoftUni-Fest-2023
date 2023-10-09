@@ -25,6 +25,18 @@ export class UserService {
     }
     )
   }
+  register(email:string,password:string,repeatedPassword:string){
+    this.HttpService.postRequest("api/users/login",{email,password,repeatedPassword}).subscribe(
+      (res:any)=>{
+        this.setToken(res.payload.token)
+        this.setUserId(res.payload.userId)
+        this.Router.navigate(["/chats"])
+    },
+    (error)=>{
+      console.log(error)
+    }
+    )
+  }
   setUserId(userId:string){
     localStorage.setItem("userId",userId)
   }

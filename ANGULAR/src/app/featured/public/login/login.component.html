@@ -4,7 +4,7 @@
   <button type="submit">Login</button>
 </form> -->
 <div class="body">
-  <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="main">
+  <form #form="ngForm" (ngSubmit)="onRegisterSubmit(form)" class="main">
     <input type="checkbox" id="chk" aria-hidden="true" />
 
     <div class="signup">
@@ -41,7 +41,7 @@
         />
         <div
           class="passwordErrorsContainer errorsContainer"
-          *ngIf="emailInput.invalid && (emailInput.touched || emailInput.dirty)"
+          *ngIf="passwordInput.invalid && (passwordInput.touched || passwordInput.dirty)"
         >
           <h6 *ngIf="passwordInput.errors?.['required']" class="errorMessage">
             Password is required
@@ -51,12 +51,32 @@
           </h6>
           ////
         </div>
+        <input
+          #repeatedPasswordInput="ngModel"
+          type="text"
+          name="repeatedPassword"
+          placeholder="Repeated password"
+          ngModel="ivan"
+          required
+        />
+        <div
+          class="passwordErrorsContainer errorsContainer"
+          *ngIf="repeatedPasswordInput.invalid && (repeatedPasswordInput.touched || repeatedPasswordInput.dirty)"
+        >
+          <h6 *ngIf="repeatedPasswordInput.errors?.['required']" class="errorMessage">
+            Password is required
+          </h6>
+          <h6 *ngIf="repeatedPasswordInput.errors?.['minLength']" class="errorMessage">
+            Password must be at least 8 chars
+          </h6>
+          ////
+        </div>
         <button type="submit">Sign up</button>
       </form>
     </div>
 
     <div class="login">
-      <form #formLogin="ngForm" (ngSubmit)="onSubmit(formLogin)">
+      <form #formLogin="ngForm" (ngSubmit)="onLoginSubmit(formLogin)">
         <label for="chk" aria-hidden="true">Login</label>
         <input
           #emailInputLoging="ngModel"
