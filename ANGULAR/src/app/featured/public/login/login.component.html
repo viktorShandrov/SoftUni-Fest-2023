@@ -51,12 +51,12 @@
           </h6>
           ////
         </div>
-        <button>Sign up</button>
+        <button type="submit">Sign up</button>
       </form>
     </div>
 
     <div class="login">
-      <form>
+      <form #formLogin="ngForm" (ngSubmit)="onSubmit(formLogin)">
         <label for="chk" aria-hidden="true">Login</label>
         <input
           #emailInputLoging="ngModel"
@@ -95,7 +95,7 @@
           </h6>
           ////
         </div>
-        <button>Login</button>
+        <button type="submit">Login</button>
       </form>
     </div>
   </form>
