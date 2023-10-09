@@ -1,5 +1,102 @@
-<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+<!-- <form >
   <input type="text" name="email"  placeholder="Email" ngModel="viktor1@abv.bg" required>
   <input type="text" name="password"  placeholder="Password" ngModel="ivan" required>
   <button type="submit">Login</button>
-</form>
+</form> -->
+<div class="body">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="main">
+    <input type="checkbox" id="chk" aria-hidden="true" />
+
+    <div class="signup">
+      <form>
+        <label for="chk" aria-hidden="true">Sign up</label>
+        <input type="text" name="txt" placeholder="Username" required="" />
+        <input
+          #emailInput="ngModel"
+          type="text"
+          name="email"
+          placeholder="Email"
+          ngModel="viktor1@abv.bg"
+          email
+          required
+        />
+        <div
+          class="emailErrorsContainer errorsContainer"
+          ngIf="emailInput.invalid && (emailInput.touched || emailInput.dirty)"
+        >
+          <h6 *ngIf="emailInput.errors?.['required']" class="errorMessage">
+            Email is required
+          </h6>
+          <h6 *ngIf="emailInput.errors?.['email']" class="errorMessage">
+            Wrong email format
+          </h6>
+        </div>
+        <input
+          #passwordInput="ngModel"
+          type="text"
+          name="password"
+          placeholder="Password"
+          ngModel="ivan"
+          required
+        />
+        <div
+          class="passwordErrorsContainer errorsContainer"
+          ngIf="emailInput.invalid && (emailInput.touched || emailInput.dirty)"
+        >
+          <h6 *ngIf="passwordInput.errors?.['required']" class="errorMessage">
+            Password is required
+          </h6>
+          <h6 *ngIf="passwordInput.errors?.['minLength']" class="errorMessage">
+            Password must be at least 8 chars
+          </h6>
+          ////
+        </div>
+        <button>Sign up</button>
+      </form>
+    </div>
+
+    <div class="login">
+      <form>
+        <label for="chk" aria-hidden="true">Login</label>
+        <input
+          #emailInput="ngModel"
+          type="text"
+          name="email"
+          placeholder="Email"
+          ngModel="viktor1@abv.bg"
+          email
+          required
+        />
+        <div
+          class="emailErrorsContainer errorsContainer"
+          ngIf="emailInput.invalid && (emailInput.touched || emailInput.dirty)"
+        >
+          <h6 *ngIf="emailInput.errors?.['required']" class="errorMessage">
+            Email is required
+          </h6>
+          <h6 *ngIf="emailInput.errors?.['email']" class="errorMessage">
+            Wrong email format
+          </h6>
+        </div>
+        <input
+          #passwordInput="ngModel"
+          type="text"
+          name="password"
+          placeholder="Password"
+          ngModel="ivan"
+          required
+        />
+        <div
+          class="passwordErrorsContainer errorsContainer"
+          ngIf="emailInput.invalid && (emailInput.touched || emailInput.dirty)"
+        >
+          <h6 *ngIf="passwordInput.errors?.['required']" class="errorMessage">
+            Password is required
+          </h6>
+          ////
+        </div>
+        <button>Login</button>
+      </form>
+    </div>
+  </form>
+</div>
