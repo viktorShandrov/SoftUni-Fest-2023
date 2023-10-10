@@ -5,6 +5,7 @@ import { CacheService } from '../../../shared/services/cache.service';
 import {HttpService} from "../../../shared/services/http.service";
 import {UserService} from "../../../shared/services/user.service";
 import {ChatService} from "../../../shared/services/chat.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-main',
@@ -20,6 +21,7 @@ export class MainComponent implements OnInit {
     public UserService: UserService,
     private ChatService: ChatService,
     private HttpService: HttpService,
+    private ToastrService: ToastrService,
 
     ) {}
 
@@ -27,13 +29,12 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     this.socket = io('http://localhost:3000');
     this.CacheService.socket = this.socket;
-
     this.HttpService.getRequest("api/rooms/giveJoinedRooms").subscribe(
       (res:any)=>{
         this.CacheService.rooms = res.rooms
       },
       error=>{
-        console.log(error)
+        this.ToastrService.error(error.error.message,"Error")
       }
     )
 

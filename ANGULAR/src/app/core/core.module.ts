@@ -8,10 +8,11 @@ import { SearchComponent } from './components/top/search/search.component';
 import { TopComponent } from './components/top/top.component';
 import { UsersComponent } from './components/bottom/users/users.component';
 import {SharedModule} from "../shared/shared.module";
+import { AsideJoinRoomMenuComponent } from './components/top/aside-join-room-menu/aside-join-room-menu.component';
 
 
 @NgModule({
-  declarations: [AsideComponent, SearchComponent, TopComponent, UsersComponent],
+  declarations: [AsideComponent, SearchComponent, TopComponent, UsersComponent, AsideJoinRoomMenuComponent],
   imports: [CommonModule,SharedModule],
   exports: [AsideComponent, SearchComponent, TopComponent, UsersComponent],
 })

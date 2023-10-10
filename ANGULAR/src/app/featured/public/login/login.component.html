@@ -4,13 +4,25 @@
   <button type="submit">Login</button>
 </form> -->
 <div class="body">
-  <form #form="ngForm" (ngSubmit)="onRegisterSubmit(form)" class="main">
+  <form  class="main">
     <input type="checkbox" id="chk" aria-hidden="true" />
 
     <div class="signup">
-      <form>
+      <form #registerForm = "ngForm" (ngSubmit)="onRegisterSubmit(registerForm)">
         <label for="chk" aria-hidden="true">Sign up</label>
-        <input type="text" name="txt" placeholder="Username" required />
+        <input #usernameInput=ngModel type="text" name="username" placeholder="Username" ngModel minlength="6" required />
+        <div
+          class="usernameErrorsContainer errorsContainer"
+          *ngIf="usernameInput.invalid && (usernameInput.touched || usernameInput.dirty)"
+        >
+          <h6 *ngIf="usernameInput.errors?.['required']" class="errorMessage">
+            Username is required
+          </h6>
+          <h6 *ngIf="usernameInput.errors?.['minlength']" class="errorMessage">
+            Username must be at least 6 chars
+          </h6>
+        </div>
+
         <input
           #emailInput="ngModel"
           type="text"
@@ -37,6 +49,7 @@
           name="password"
           placeholder="Password"
           ngModel="ivan"
+          minlength="8"
           required
         />
         <div
@@ -49,7 +62,7 @@
           <h6 *ngIf="passwordInput.errors?.['required']" class="errorMessage">
             Password is required
           </h6>
-          <h6 *ngIf="passwordInput.errors?.['minLength']" class="errorMessage">
+          <h6 *ngIf="passwordInput.errors?.['minlength']" class="errorMessage">
             Password must be at least 8 chars
           </h6>
         </div>
@@ -75,7 +88,7 @@
             Password is required
           </h6>
           <h6
-            *ngIf="repeatedPasswordInput.errors?.['minLength']"
+            *ngIf="repeatedPasswordInput.errors?.['minlength']"
             class="errorMessage"
           >
             Password must be at least 8 chars
