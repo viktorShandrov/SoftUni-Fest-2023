@@ -14,16 +14,26 @@
   aria-labelledby="offcanvasWithBothOptionsLabel"
 >
   <div class="offcanvas-header">
+    <img
+      src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?cs=srgb&dl=pexels-simon-robben-614810.jpg&fm=jpg"
+      alt="asdad"
+    />
     <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">
-      Backdrop with scrolling
+      Слави Караславов
     </h5>
     <button
       type="button"
-      class="btn-close"
+      class="btn-close light"
       data-bs-dismiss="offcanvas"
     ></button>
   </div>
   <div class="offcanvas-body">
-    <div appAsideMenuBtn [menuToShow]="HtmlElementsService.elements.AsideJoinRoomMenuComponent" class="menuBtn joinRoomMenuBtn">Join room</div>
+    <div
+      appAsideMenuBtn
+      [menuToShow]="HtmlElementsService.elements.AsideJoinRoomMenuComponent"
+      class="menuBtn joinRoomMenuBtn"
+    >
+      Join room
+    </div>
   </div>
 </div>

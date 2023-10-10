@@ -39,12 +39,19 @@ button {
 }
 
 .message {
-  background-color: #6c757d;
   border-radius: 10px;
   padding: 10px;
   max-width: 70%;
-  align-self: flex-start;
   margin-bottom: 10px;
+  align-self: flex-start;
+}
+
+.other {
+  background-color: #6c757d;
+}
+
+.mine {
+  background-color: #a1a8b0;
 }
 
 .message-content {

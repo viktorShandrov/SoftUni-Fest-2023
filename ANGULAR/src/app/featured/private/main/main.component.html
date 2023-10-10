@@ -11,7 +11,14 @@
   <div *ngIf="CacheService.currentRoomId" class="chat">
     <div appHtmlElement #messagesContainer class="messagesContainer">
       <div class="messages">
-        <div *ngFor="let message of CacheService.messages" class="message">
+        <div
+          *ngFor="let message of CacheService.messages"
+          class=""
+          [ngClass]="
+            message.userId === this.UserService.getUserId() ? 'mine' : 'other'
+          "
+          class="message"
+        >
           {{ message.text }}
         </div>
       </div>

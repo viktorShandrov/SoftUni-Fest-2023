@@ -10,3 +10,17 @@
 .offcanvas {
   background-color: #adb5bd;
 }
+
+img {
+  width: 3.7em;
+  height: 3.7em;
+  border-radius: 5em;
+}
+
+.btn-close {
+  background-color: #adb5bd;
+}
+
+.offcanvas-header {
+  border-bottom: 1px solid #343a40;
+}
