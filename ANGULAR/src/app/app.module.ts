@@ -10,17 +10,26 @@ import { FormsModule } from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {ApiInterceptor} from "./core/interceptors/api.interceptor";
 import {TokenInterceptor} from "./core/interceptors/token.interceptor";
+import {ToastrModule} from "ngx-toastr";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     SharedModule,
     CoreModule,
     FeaturedModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      progressBar:true,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }),
 
   ],
   providers: [
