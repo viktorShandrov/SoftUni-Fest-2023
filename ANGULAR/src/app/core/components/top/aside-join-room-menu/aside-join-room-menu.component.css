@@ -1,0 +1,10 @@
+.container{
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  z-index: 9999;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(222,222,222,0.5);
+}

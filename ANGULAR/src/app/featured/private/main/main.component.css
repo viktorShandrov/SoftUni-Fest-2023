@@ -1,6 +1,7 @@
 main {
   display: flex;
   color: white;
+  position: relative;
 }
 
 .navigation {

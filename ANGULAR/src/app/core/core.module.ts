@@ -9,11 +9,12 @@ import { TopComponent } from './components/top/top.component';
 import { UsersComponent } from './components/bottom/users/users.component';
 import {SharedModule} from "../shared/shared.module";
 import { AsideJoinRoomMenuComponent } from './components/top/aside-join-room-menu/aside-join-room-menu.component';
+import { AsideMenuBtnDirective } from './directives/aside-menu-btn.directive';
 
 
 @NgModule({
-  declarations: [AsideComponent, SearchComponent, TopComponent, UsersComponent, AsideJoinRoomMenuComponent],
+  declarations: [AsideComponent, SearchComponent, TopComponent, UsersComponent, AsideJoinRoomMenuComponent, AsideMenuBtnDirective],
   imports: [CommonModule,SharedModule],
-  exports: [AsideComponent, SearchComponent, TopComponent, UsersComponent],
+    exports: [AsideComponent, SearchComponent, TopComponent, UsersComponent, AsideJoinRoomMenuComponent],
 })
 export class CoreModule {}

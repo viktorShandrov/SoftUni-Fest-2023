@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {ElementRef, Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -6,4 +6,8 @@ import { Injectable } from '@angular/core';
 export class HtmlElementsService {
   elements:any = {}
   constructor() { }
+
+  saveElement(element:ElementRef,elementName:string){
+    this.elements[elementName] = element
+  }
 }
