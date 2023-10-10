@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpService} from "./http.service";
 import {Router} from "@angular/router";
+import {ToastrService} from "ngx-toastr";
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,7 @@ export class UserService {
 
   constructor(
     private HttpService:HttpService,
+    private ToastrService:ToastrService,
     private Router:Router,
   ) {
 
@@ -21,19 +23,20 @@ export class UserService {
         this.Router.navigate(["/chats"])
     },
     (error)=>{
-      console.log(error)
+      this.ToastrService.error(error.error.message,"Error")
     }
     )
   }
-  register(email:string,password:string,repeatedPassword:string){
-    this.HttpService.postRequest("api/users/login",{email,password,repeatedPassword}).subscribe(
+  register(username:string,email:string,password:string,repeatedPassword:string){
+    this.HttpService.postRequest("api/users/register",{username,email,password,repeatedPassword}).subscribe(
       (res:any)=>{
+        console.log(res)
         this.setToken(res.payload.token)
         this.setUserId(res.payload.userId)
         this.Router.navigate(["/chats"])
     },
     (error)=>{
-      console.log(error)
+      this.ToastrService.error(error.error.message,"Error")
     }
     )
   }
