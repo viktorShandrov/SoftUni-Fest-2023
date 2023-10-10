@@ -41,7 +41,10 @@
         />
         <div
           class="passwordErrorsContainer errorsContainer"
-          *ngIf="passwordInput.invalid && (passwordInput.touched || passwordInput.dirty)"
+          *ngIf="
+            passwordInput.invalid &&
+            (passwordInput.touched || passwordInput.dirty)
+          "
         >
           <h6 *ngIf="passwordInput.errors?.['required']" class="errorMessage">
             Password is required
@@ -49,7 +52,6 @@
           <h6 *ngIf="passwordInput.errors?.['minLength']" class="errorMessage">
             Password must be at least 8 chars
           </h6>
-          ////
         </div>
         <input
           #repeatedPasswordInput="ngModel"
@@ -61,15 +63,23 @@
         />
         <div
           class="passwordErrorsContainer errorsContainer"
-          *ngIf="repeatedPasswordInput.invalid && (repeatedPasswordInput.touched || repeatedPasswordInput.dirty)"
+          *ngIf="
+            repeatedPasswordInput.invalid &&
+            (repeatedPasswordInput.touched || repeatedPasswordInput.dirty)
+          "
         >
-          <h6 *ngIf="repeatedPasswordInput.errors?.['required']" class="errorMessage">
+          <h6
+            *ngIf="repeatedPasswordInput.errors?.['required']"
+            class="errorMessage"
+          >
             Password is required
           </h6>
-          <h6 *ngIf="repeatedPasswordInput.errors?.['minLength']" class="errorMessage">
+          <h6
+            *ngIf="repeatedPasswordInput.errors?.['minLength']"
+            class="errorMessage"
+          >
             Password must be at least 8 chars
           </h6>
-          ////
         </div>
         <button type="submit">Sign up</button>
       </form>
@@ -89,9 +99,15 @@
         />
         <div
           class="emailErrorsContainer errorsContainer"
-          *ngIf="emailInputLoging.invalid && (emailInputLoging.touched || emailInputLoging.dirty)"
+          *ngIf="
+            emailInputLoging.invalid &&
+            (emailInputLoging.touched || emailInputLoging.dirty)
+          "
         >
-          <h6 *ngIf="emailInputLoging.errors?.['required']" class="errorMessage">
+          <h6
+            *ngIf="emailInputLoging.errors?.['required']"
+            class="errorMessage"
+          >
             Email is required
           </h6>
           <h6 *ngIf="emailInputLoging.errors?.['email']" class="errorMessage">
@@ -108,12 +124,17 @@
         />
         <div
           class="passwordErrorsContainer errorsContainer"
-          *ngIf="passwordInputLogin.invalid && (passwordInputLogin.touched || passwordInputLogin.dirty)"
+          *ngIf="
+            passwordInputLogin.invalid &&
+            (passwordInputLogin.touched || passwordInputLogin.dirty)
+          "
         >
-          <h6 *ngIf="passwordInputLogin.errors?.['required']" class="errorMessage">
+          <h6
+            *ngIf="passwordInputLogin.errors?.['required']"
+            class="errorMessage"
+          >
             Password is required
           </h6>
-          ////
         </div>
         <button type="submit">Login</button>
       </form>
