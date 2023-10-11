@@ -15,8 +15,11 @@ export class AsideMenuBtnDirective {
 
     @HostListener("click")
     onClick(){
-      this.Renderer2.setStyle(this.HtmlElementsService.elements['offcanvas'],"display","none")
-      
+      this.HtmlElementsService.elements['offcanvas'].classList.remove("show")
+      this.Renderer2.setStyle(document.querySelector(".offcanvas-backdrop")
+        ,"display","none")
+
+
       this.Renderer2.setStyle(this.menuToShow.nativeElement,"display","flex")
     }
 

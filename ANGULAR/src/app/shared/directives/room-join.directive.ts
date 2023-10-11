@@ -15,6 +15,10 @@ export class RoomJoinDirective {
     private CacheService: CacheService
   ) {
     this.Renderer2.listen(this.element.nativeElement, 'click', () => {
+      this.connectToRoom()
+    });
+  }
+    connectToRoom(){
       const roomId = this.element.nativeElement.getAttribute("roomid")
       this.CacheService.currentRoomEl = this.element.nativeElement
       this.CacheService.currentRoomId = roomId
@@ -29,6 +33,5 @@ export class RoomJoinDirective {
           this.ChatService.scrollToBottom()
         },0)
       });
-    });
-  }
+    }
 }

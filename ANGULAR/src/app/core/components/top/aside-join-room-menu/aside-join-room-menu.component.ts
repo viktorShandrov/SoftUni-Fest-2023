@@ -3,6 +3,7 @@ import {HtmlElementsService} from "../../../../shared/services/html-elements.ser
 import {RoomsService} from "../../../services/rooms.service";
 import {subscribeOn} from "rxjs";
 import {ToastrService} from "ngx-toastr";
+import {CacheService} from "../../../../shared/services/cache.service";
 
 @Component({
   selector: 'app-aside-join-room-menu',
@@ -15,6 +16,7 @@ export class AsideJoinRoomMenuComponent implements OnInit,AfterViewInit{
     private element:ElementRef,
     private Renderer2:Renderer2,
     private RoomsService:RoomsService,
+    private CacheService:CacheService,
     private ToastrService:ToastrService,
 
   ) {
@@ -24,17 +26,28 @@ export class AsideJoinRoomMenuComponent implements OnInit,AfterViewInit{
 
   }
   ngAfterViewInit() {
-
-    this.Renderer2.setStyle(this.element.nativeElement  ,"display","none")
+    this.hideMenu()
   }
   onSubmit(form:any){
     this.RoomsService.joinRoom(form.value.roomId).subscribe(
-      (res)=>{
+      (res:any)=>{
+        this.CacheService.rooms.push(res.room)
+        this.hideMenu()
+        setTimeout(()=>{
+          this.connectToNewestRoom()
 
+        },0)
       },
       (error)=>{
         this.ToastrService.error(error.error.message,"Error")
       }
     )
+  }
+  hideMenu(){
+    this.Renderer2.setStyle(this.element.nativeElement  ,"display","none")
+  }
+  connectToNewestRoom(){
+    const roomElementsAR = this.HtmlElementsService.elements.roomElementsQL.toArray()
+    roomElementsAR[roomElementsAR.length-1].nativeElement.click()
   }
 }
