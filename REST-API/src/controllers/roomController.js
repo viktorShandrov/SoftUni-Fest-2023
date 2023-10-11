@@ -30,8 +30,8 @@ router.get("/joinRoom/:roomId",isAuth,async (req,res)=>{
     try {
         const {roomId} = req.params
         const {_id} =req.user
-        await roomManager.joinRoom(roomId,_id)
-        res.status(200).end()
+        const room = await roomManager.joinRoom(roomId,_id)
+        res.status(200).json({room})
     }catch (error){
         res.status(400).json({message:error.message})
     }

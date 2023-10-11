@@ -27,8 +27,10 @@ exports.addMessageToRoom=async (roomId,messageId)=>{
 exports.joinRoom = async (roomId,userId)=>{
     const room = await roomModel.findById(roomId)
     if(!room) throw new Error("No such room")
+    if(room.members.includes(userId)) throw new Error("User is already in room")
     room.members.push(userId)
-    return room.save()
+    await room.save()
+    return room
 }
 exports.leaveRoom = async (roomId,userId)=>{
     const room = await roomModel.findById(roomId)
