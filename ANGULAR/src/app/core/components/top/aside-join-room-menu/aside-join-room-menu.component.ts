@@ -1,5 +1,8 @@
 import {AfterViewInit, Component, ElementRef, Input, OnInit, Renderer2} from '@angular/core';
 import {HtmlElementsService} from "../../../../shared/services/html-elements.service";
+import {RoomsService} from "../../../services/rooms.service";
+import {subscribeOn} from "rxjs";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-aside-join-room-menu',
@@ -11,6 +14,8 @@ export class AsideJoinRoomMenuComponent implements OnInit,AfterViewInit{
     private HtmlElementsService:HtmlElementsService,
     private element:ElementRef,
     private Renderer2:Renderer2,
+    private RoomsService:RoomsService,
+    private ToastrService:ToastrService,
 
   ) {
   }
@@ -21,5 +26,15 @@ export class AsideJoinRoomMenuComponent implements OnInit,AfterViewInit{
   ngAfterViewInit() {
 
     this.Renderer2.setStyle(this.element.nativeElement  ,"display","none")
+  }
+  onSubmit(form:any){
+    this.RoomsService.joinRoom(form.value.roomId).subscribe(
+      (res)=>{
+
+      },
+      (error)=>{
+        this.ToastrService.error(error.error.message,"Error")
+      }
+    )
   }
 }

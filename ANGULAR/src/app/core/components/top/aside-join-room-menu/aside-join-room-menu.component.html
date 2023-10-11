@@ -1,3 +1,11 @@
-<div class="container">
-  <h6>works</h6>
+<div class="joinRoomMenuContainerBG">
+  <div class="joinRoomMenuContainer">
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)" >
+      <input #roomIdInput="ngModel" type="text" name="roomId" placeholder="Room ID" ngModel required>
+        <div *ngIf="roomIdInput.invalid && roomIdInput.touched" class="errorContainer">
+          <h6 *ngIf="roomIdInput.errors?.['required']">room id is required</h6>
+        </div>
+      <button type="submit">Join</button>
+    </form>
+  </div>
 </div>

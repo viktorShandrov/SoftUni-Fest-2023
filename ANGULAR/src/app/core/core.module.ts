@@ -10,11 +10,12 @@ import { UsersComponent } from './components/bottom/users/users.component';
 import {SharedModule} from "../shared/shared.module";
 import { AsideJoinRoomMenuComponent } from './components/top/aside-join-room-menu/aside-join-room-menu.component';
 import { AsideMenuBtnDirective } from './directives/aside-menu-btn.directive';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
   declarations: [AsideComponent, SearchComponent, TopComponent, UsersComponent, AsideJoinRoomMenuComponent, AsideMenuBtnDirective],
-  imports: [CommonModule,SharedModule],
+    imports: [CommonModule, SharedModule, FormsModule],
     exports: [AsideComponent, SearchComponent, TopComponent, UsersComponent, AsideJoinRoomMenuComponent],
 })
 export class CoreModule {}

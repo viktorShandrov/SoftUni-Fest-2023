@@ -26,7 +26,7 @@ router.post("/deleteRoom",isAuth,async (req,res)=>{
     }
 
 })
-router.post("/joinRoom/:roomId",isAuth,async (req,res)=>{
+router.get("/joinRoom/:roomId",isAuth,async (req,res)=>{
     try {
         const {roomId} = req.params
         const {_id} =req.user
