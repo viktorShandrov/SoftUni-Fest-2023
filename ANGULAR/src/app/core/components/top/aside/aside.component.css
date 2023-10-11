@@ -24,3 +24,20 @@ img {
 .offcanvas-header {
   border-bottom: 1px solid #343a40;
 }
+
+.offcanvas-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.menuBtn {
+  font-size: 1.3em;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.5em;
+  background-color: #343a40;
+  color: #adb5bd;
+  border-radius: 2em;
+}
