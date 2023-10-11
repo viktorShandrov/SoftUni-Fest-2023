@@ -14,7 +14,7 @@
 .join-room-menu form {
   background-color: rgb(33, 33, 33);
   color: white;
-  padding: 3em;
+  padding: 1.2em;
   border-radius: 2em;
   display: flex;
   flex-direction: column;
@@ -22,9 +22,7 @@
 }
 
 .close-icon {
-  position: absolute;
-  top: 1em;
-  right: 1em;
+  padding-left: 5em;
   cursor: pointer;
   color: red;
 }

@@ -1,6 +1,9 @@
 <div class="join-room-menu">
   <form #form="ngForm" (ngSubmit)="onSubmit(form)">
-    <i class="fa-regular fa-circle-xmark fa-2x close-icon"></i>
+    <i
+      (click)="hideMenu()"
+      class="fa-regular fa-circle-xmark fa-2x close-icon"
+    ></i>
     <input
       #roomIdInput="ngModel"
       type="text"
