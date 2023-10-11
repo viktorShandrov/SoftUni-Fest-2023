@@ -35,7 +35,6 @@ export class AsideJoinRoomMenuComponent implements OnInit,AfterViewInit{
         this.hideMenu()
         setTimeout(()=>{
           this.connectToNewestRoom()
-
         },0)
       },
       (error)=>{
