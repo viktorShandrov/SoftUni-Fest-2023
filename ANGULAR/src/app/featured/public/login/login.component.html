@@ -4,16 +4,27 @@
   <button type="submit">Login</button>
 </form> -->
 <div class="body">
-  <form  class="main">
+  <form class="main">
     <input type="checkbox" id="chk" aria-hidden="true" />
 
     <div class="signup">
-      <form #registerForm = "ngForm" (ngSubmit)="onRegisterSubmit(registerForm)">
+      <form #registerForm="ngForm" (ngSubmit)="onRegisterSubmit(registerForm)">
         <label for="chk" aria-hidden="true">Sign up</label>
-        <input #usernameInput=ngModel type="text" name="username" placeholder="Username" ngModel minlength="6" required />
+        <input
+          #usernameInput="ngModel"
+          type="text"
+          name="username"
+          placeholder="Username"
+          ngModel
+          minlength="6"
+          required
+        />
         <div
           class="usernameErrorsContainer errorsContainer"
-          *ngIf="usernameInput.invalid && (usernameInput.touched || usernameInput.dirty)"
+          *ngIf="
+            usernameInput.invalid &&
+            (usernameInput.touched || usernameInput.dirty)
+          "
         >
           <h6 *ngIf="usernameInput.errors?.['required']" class="errorMessage">
             Username is required
