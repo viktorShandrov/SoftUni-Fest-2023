@@ -13,7 +13,7 @@ import { HttpService } from '../../../shared/services/http.service';
 import { UserService } from '../../../shared/services/user.service';
 import { ChatService } from '../../../shared/services/chat.service';
 import { ToastrService } from 'ngx-toastr';
-import {HtmlElementsService} from "../../../shared/services/html-elements.service";
+import { HtmlElementsService } from '../../../shared/services/html-elements.service';
 
 @Component({
   selector: 'app-main',
@@ -39,7 +39,6 @@ export class MainComponent implements OnInit {
     this.HttpService.getRequest('api/rooms/giveJoinedRooms').subscribe(
       (res: any) => {
         this.CacheService.rooms = res.rooms;
-
       },
       (error) => {
         this.ToastrService.error(error.error.message, 'Error');
@@ -67,6 +66,9 @@ export class MainComponent implements OnInit {
   }
 
   onMessageSubmit(form: any) {
+    if (!form.form.value.message) {
+      return;
+    }
     this.socket.emit('createMessage', {
       messageText: form.form.value.message,
       roomId: this.CacheService.currentRoomId,

@@ -1,8 +1,7 @@
 const express = require("express");
 const cors = require("cors");
-const {auth} = require("../utils/auth.js")
-const mainRouter = require("../mainRouter.js")
-
+const { auth } = require("../utils/auth.js");
+const mainRouter = require("../mainRouter.js");
 
 exports.expressConfig = (server) => {
   server.use(express.urlencoded({ extended: true }));
@@ -19,9 +18,7 @@ exports.expressConfig = (server) => {
 
     next();
   };
-  const allowedOrigins = [
-    "http://localhost:4200",
-  ];
+  const allowedOrigins = ["http://localhost:4200"];
   server.use(
     cors({
       origin: allowedOrigins,

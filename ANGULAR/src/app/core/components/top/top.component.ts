@@ -1,10 +1,8 @@
-import {Component, ElementRef, Renderer2} from '@angular/core';
+import { Component, ElementRef, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-top',
   templateUrl: './top.component.html',
-  styleUrls: ['./top.component.css']
+  styleUrls: ['./top.component.css'],
 })
-export class TopComponent {
-
-}
+export class TopComponent {}

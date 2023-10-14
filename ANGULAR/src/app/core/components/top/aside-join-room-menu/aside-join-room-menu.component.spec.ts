@@ -8,7 +8,7 @@ describe('AsideJoinRoomMenuComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AsideJoinRoomMenuComponent]
+      declarations: [AsideJoinRoomMenuComponent],
     });
     fixture = TestBed.createComponent(AsideJoinRoomMenuComponent);
     component = fixture.componentInstance;
