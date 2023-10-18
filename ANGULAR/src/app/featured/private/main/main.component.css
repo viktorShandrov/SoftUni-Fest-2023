@@ -104,9 +104,10 @@ button {
   padding: 0.4em;
   border-radius: 0.7em;
   background-color: #6c757d;
+  transition: all 0.3s ease;
 }
 
-.fa-smile:hover .emojies {
+#smile:hover .emojies {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -115,11 +116,11 @@ button {
 }
 
 .emojies span {
-  font-size: 1.2em;
   cursor: pointer;
   padding: 0.5em;
   border-radius: 15%;
   flex: 0 0 1fr;
+  transition: background-color 0.3s ease;
 }
 
 .emojies span:hover {

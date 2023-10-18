@@ -38,14 +38,15 @@
         placeholder="Write a message..."
       />
 
-      <i class="far fa-smile fa"
-        ><div class="emojies">
+      <i id="smile" class="far fa-smile fa">
+        <div class="emojies">
           <span
             (click)="onEmojiAdd(emoji, form)"
             *ngFor="let emoji of emojies"
             [innerHTML]="emoji"
-          ></span></div
-      ></i>
+          ></span>
+        </div>
+      </i>
       <i class="fas fa-microphone fa"></i>
       <button type="submit"><i class="fas fa-paper-plane fa"></i></button>
     </form>
