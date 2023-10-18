@@ -29,14 +29,23 @@
         <i class="fas fa-paperclip fa"></i>
       </label>
       <input
+        id="chat-input"
         type="text"
         class="messaging"
         name="message"
-        ngModel
+        [(ngModel)]="inputValue"
         required
         placeholder="Write a message..."
       />
-      <i class="far fa-smile fa"></i>
+
+      <i class="far fa-smile fa"
+        ><div class="emojies">
+          <span
+            (click)="onEmojiAdd(emoji, form)"
+            *ngFor="let emoji of emojies"
+            [innerHTML]="emoji"
+          ></span></div
+      ></i>
       <i class="fas fa-microphone fa"></i>
       <button type="submit"><i class="fas fa-paper-plane fa"></i></button>
     </form>

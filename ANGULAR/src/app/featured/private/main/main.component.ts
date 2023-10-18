@@ -21,6 +21,59 @@ import { HtmlElementsService } from '../../../shared/services/html-elements.serv
   styleUrls: ['./main.component.css'],
 })
 export class MainComponent implements OnInit {
+  inputValue: string = '';
+  emojies: string[] = [
+    '😀',
+    '😃',
+    '😄',
+    '😁',
+    '😆',
+    '😅',
+    '😂',
+    '🤣',
+    '😊',
+    '😇',
+    '🙂',
+    '🙃',
+    '😉',
+    '😌',
+    '😍',
+    '🥰',
+    '😘',
+    '😗',
+    '😙',
+    '😚',
+    '😋',
+    '😛',
+    '😜',
+    '😝',
+    '🤪',
+    '🤨',
+    '🧐',
+    '😎',
+    '🤩',
+    '😏',
+    '😒',
+    '😞',
+    '😔',
+    '😟',
+    '😕',
+    '🙁',
+    '☹️',
+    '😣',
+    '😖',
+    '😫',
+    '😤',
+    '😢',
+    '😭',
+    '😰',
+    '😱',
+    '😨',
+    '😥',
+    '😓',
+    '🤗',
+    '🤔',
+  ];
   private socket: any;
   @ViewChild('messagesContainer') messagesContainer!: ElementRef;
   constructor(
@@ -75,5 +128,10 @@ export class MainComponent implements OnInit {
       userId: this.UserService.getUserId(),
     });
     form.form.reset();
+  }
+
+  onEmojiAdd(emoji: any, form: any) {
+    // form.form.value.message += emoji;
+    this.inputValue += emoji;
   }
 }
