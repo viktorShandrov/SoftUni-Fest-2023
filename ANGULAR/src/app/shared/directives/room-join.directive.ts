@@ -22,7 +22,7 @@ export class RoomJoinDirective {
     const roomId = this.element.nativeElement.getAttribute('roomid');
     this.CacheService.currentRoomEl = this.element.nativeElement;
     this.CacheService.currentRoomId = roomId;
-
+    this.ChatService.showChatSection(this.Renderer2)
     this.CacheService.socket.emit('connectToRoom', {
       roomId,
       userId: this.UserService.getUserId(),

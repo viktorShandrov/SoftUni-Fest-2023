@@ -14,13 +14,14 @@ import { UserService } from '../../../shared/services/user.service';
 import { ChatService } from '../../../shared/services/chat.service';
 import { ToastrService } from 'ngx-toastr';
 import { HtmlElementsService } from '../../../shared/services/html-elements.service';
+import {logMessages} from "@angular-devkit/build-angular/src/tools/esbuild/utils";
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.css'],
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit,AfterViewInit {
   inputValue: string = '';
   emojies: string[] = [
     '😀',
@@ -76,6 +77,8 @@ export class MainComponent implements OnInit {
   ];
   private socket: any;
   @ViewChild('messagesContainer') messagesContainer!: ElementRef;
+  @ViewChild('chatSection') chatSection!: ElementRef;
+  @ViewChild('smileBtn') smileBtn!: ElementRef;
   constructor(
     public CacheService: CacheService,
     private Renderer2: Renderer2,
@@ -85,6 +88,10 @@ export class MainComponent implements OnInit {
     private HtmlElementsService: HtmlElementsService,
     private ToastrService: ToastrService
   ) {}
+  ngAfterViewInit() {
+    this.Renderer2.listen(this.smileBtn.nativeElement,"click",()=>console.log("ivan"))
+    this.ChatService.hideChatSection(this.Renderer2)
+  }
 
   ngOnInit() {
     this.socket = io('http://localhost:3000');
