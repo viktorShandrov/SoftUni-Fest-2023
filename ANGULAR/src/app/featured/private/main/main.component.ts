@@ -76,6 +76,7 @@ export class MainComponent implements OnInit,AfterViewInit {
     '🤔',
   ];
   private socket: any;
+  isVisible:boolean = false
   @ViewChild('messagesContainer') messagesContainer!: ElementRef;
   @ViewChild('chatSection') chatSection!: ElementRef;
   @ViewChild('smileBtn') smileBtn!: ElementRef;
@@ -89,7 +90,10 @@ export class MainComponent implements OnInit,AfterViewInit {
     private ToastrService: ToastrService
   ) {}
   ngAfterViewInit() {
-    this.Renderer2.listen(this.smileBtn.nativeElement,"click",()=>console.log("ivan"))
+    this.Renderer2.listen(this.smileBtn.nativeElement,"click",()=>{
+      this.isVisible = !this.isVisible
+      this.ChatService.toggleEmojiMenu(this.isVisible,this.Renderer2)
+    })
     this.ChatService.hideChatSection(this.Renderer2)
   }
 

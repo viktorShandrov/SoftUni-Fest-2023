@@ -39,7 +39,7 @@
       />
 
       <i #smileBtn id="smile" class="far fa-smile fa">
-        <div class="emojies">
+        <div appHtmlElement class="emojies">
           <span
             (click)="onEmojiAdd(emoji, form)"
             *ngFor="let emoji of emojies"

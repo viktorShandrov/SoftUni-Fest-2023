@@ -105,15 +105,13 @@ button {
   border-radius: 0.7em;
   background-color: #6c757d;
   transition: all 0.3s ease;
-}
-
-#smile:hover .emojies {
-  display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 0.2em;
 }
+
+
 
 .emojies span {
   cursor: pointer;
