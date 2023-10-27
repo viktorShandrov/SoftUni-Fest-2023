@@ -17,12 +17,7 @@ const schema = new mongoose.Schema({
 
 
 })
-schema.virtual("repeatedPassword").set(function(value){
-    if(this.password!==value){
-        throw new Error("Passwords mismach!")
-    }
-})
 
 
 
-module.exports  = mongoose.model("User",schema) 
+module.exports  = mongoose.model("Offer",schema)

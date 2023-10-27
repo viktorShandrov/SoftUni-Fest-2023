@@ -26,7 +26,7 @@ const schema = new mongoose.Schema({
       }
 
 })
-schema.virtual("repetedPassword").set(function(value){
+schema.virtual("repeatedPassword").set(function(value){
     if(this.password!==value){
         throw new Error("Passwords mismach!")
     }
