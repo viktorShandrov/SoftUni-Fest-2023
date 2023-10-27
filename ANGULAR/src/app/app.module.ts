@@ -9,12 +9,10 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { FeaturedModule } from './featured/featured.module';
 import { FormsModule } from '@angular/forms';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
-import {ApiInterceptor} from "./core/interceptors/api.interceptor";
-import {TokenInterceptor} from "./core/interceptors/token.interceptor";
-
-
+import { ApiInterceptor } from './core/interceptors/api.interceptor';
+import { TokenInterceptor } from './core/interceptors/token.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -42,6 +40,6 @@ import {TokenInterceptor} from "./core/interceptors/token.interceptor";
       multi: true, // Set multi to true to allow multiple interceptors
     },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

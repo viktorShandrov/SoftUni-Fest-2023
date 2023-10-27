@@ -42,3 +42,18 @@ li:first-child:hover {
   display: flex;
   gap: 3em;
 }
+
+.search-field {
+  display: flex;
+  gap: 0.5em;
+  background-color: #8f97db;
+  padding: 0.8em;
+  border-radius: 0.5em;
+}
+
+.search-field input {
+  color: white;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
