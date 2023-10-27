@@ -1,1 +1,13 @@
-<p>create works!</p>
+<form #form="ngModel" (ngSubmit)="submit()">
+  <label for="nameInput">Име на оферта</label>
+  <input id="nameInput" type="text" #nameInput='ngModel' placeholder="Име на оферта...">
+
+  <label for="nameInput">Описание</label>
+  <textarea id="descriptionInput"  #descriptionInput='ngModel' placeholder="Описание..."></textarea>
+
+    <label for="priceInput">Цена</label>
+
+    <input id="priceInput" type="text" #priceInput='ngModel' placeholder="Цена на оферта...">
+
+  <button type="submit">Създай</button>
+</form>
