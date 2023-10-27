@@ -1,1 +1,6 @@
-<p>catalog works!</p>
+<div class="container">
+  <div *ngFor="let businessman of businessmen" class="businessman">
+    <p>I am {{ businessman.name }}.</p>
+    <p>This is my company {{ businessman.company }}.</p>
+  </div>
+</div>

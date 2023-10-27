@@ -1,0 +1,10 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.app:nth-child(3) {
+  flex: 1;
+}

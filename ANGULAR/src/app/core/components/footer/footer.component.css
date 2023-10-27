@@ -3,6 +3,7 @@ footer {
   justify-content: space-around;
   padding: 1.5em;
   color: white;
+  background-color: rgb(80, 80, 80);
 }
 
 .logo {
