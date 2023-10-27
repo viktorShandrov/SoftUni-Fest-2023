@@ -8,7 +8,9 @@ import { CreateComponent } from './private/create/create.component';
 import { CatalogComponent } from './private/catalog/catalog.component';
 import { DetailsComponent } from './private/details/details.component';
 import { RegisterComponent } from './public/register/register.component';
-import {CoreModule} from "../core/core.module";
+import { CoreModule } from '../core/core.module';
+import { RouterService } from '../core/services/router.service';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,7 @@ import {CoreModule} from "../core/core.module";
     DetailsComponent,
     RegisterComponent,
   ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    CoreModule
-
-  ],
+  imports: [CommonModule, FormsModule, CoreModule, AppRoutingModule],
+  providers: [RouterService],
 })
 export class FeaturedModule {}

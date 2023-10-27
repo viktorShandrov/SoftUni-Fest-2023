@@ -30,6 +30,10 @@ p {
   color: #71717a;
 }
 
+.last-p {
+  font-size: 1.2em;
+}
+
 .right {
   background-color: #343859;
   height: 90vh;

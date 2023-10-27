@@ -1,10 +1,26 @@
 import { Component } from '@angular/core';
+import { UserService } from '../../../shared/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
+  constructor(private UserService: UserService, private Router: Router) {}
 
+  ngAfterViewInit() {
+    localStorage.clear();
+  }
+
+  onRegisterSubmit(form: any) {
+    this.UserService.register(
+      form.form.value.email,
+      form.form.value.password,
+      form.form.value.repeatedPassword,
+      form.form.value.company
+    );
+    this.Router.navigate(['/catalog']);
+  }
 }

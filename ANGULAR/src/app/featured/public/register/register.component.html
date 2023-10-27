@@ -1,6 +1,6 @@
 <div class="container">
   <div class="left">
-    <form action="post">
+    <form action="post" #form="ngForm" (ngSubmit)="onRegisterSubmit(form)">
       <div class="heading-left">
         <h1>Create your account</h1>
         <p>Unlock all Features!</p>
