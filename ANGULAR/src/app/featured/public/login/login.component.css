@@ -1,4 +1,47 @@
-.body {
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding-left: 5em;
+}
+
+.left {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.right {
+  background-color: #343859;
+  height: 90vh;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.right img {
+  width: 35em;
+  margin-left: 1em;
+  margin-bottom: 2em;
+}
+
+.heading-right {
+  color: #e0eaff;
+  font-weight: 700;
+  font-size: 1.4em;
+}
+
+.right p {
+  color: #e0eaff;
+  opacity: 75%;
+}
+
+/* .body {
   margin: 0;
   padding: 0;
   display: flex;
@@ -100,4 +143,4 @@ button:hover {
 
 .errorMessage {
   font-weight: bold;
-}
+} */
