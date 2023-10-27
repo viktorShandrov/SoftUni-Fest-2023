@@ -4,6 +4,8 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {DetailsService} from "../../services/details.service";
 import {ToastrService} from "ngx-toastr";
 import {UserService} from "../../../shared/services/user.service";
+import {RouterService} from "../../../core/services/router.service";
+import {CreateService} from "../../services/create.service";
 
 @Component({
   selector: 'app-details',
@@ -14,15 +16,25 @@ export class DetailsComponent implements OnInit{
 
   constructor(
     private route:ActivatedRoute,
+    private Router:Router,
     private DetailsService:DetailsService,
     public UserService:UserService,
     private ToastrService:ToastrService,
+    private CreateService:CreateService,
+    private RouterService:RouterService,
 
 
   ) {
   }
   currentOffer:any ={}
+
+  redirectToEdit(){
+    this.CreateService.offer = this.currentOffer
+    this.Router.navigate(['/createOffer'], { queryParams: { edit: 'true' } });
+  }
   ngOnInit() {
+
+
     this.route.params.subscribe((params:any) => {
       const id = params['id']; // 'id' should match the parameter name in your route configuration
       this.DetailsService.getOffer(id).subscribe(
