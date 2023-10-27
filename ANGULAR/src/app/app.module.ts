@@ -13,6 +13,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { ApiInterceptor } from './core/interceptors/api.interceptor';
 import { TokenInterceptor } from './core/interceptors/token.interceptor';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,18 +21,17 @@ import { TokenInterceptor } from './core/interceptors/token.interceptor';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot(
-      {
-        positionClass: 'toast-top-right',
-        timeOut: 3000, // 3 seconds
-        closeButton: true,
-      },
-    ),
+    ToastrModule.forRoot({
+      positionClass: 'toast-top-right',
+      timeOut: 3000, // 3 seconds
+      closeButton: true,
+    }),
     SharedModule,
     CoreModule,
     HttpClientModule,
     FeaturedModule,
     FormsModule,
+    RouterModule,
   ],
 
   providers: [

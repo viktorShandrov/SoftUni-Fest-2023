@@ -108,6 +108,11 @@ p {
   cursor: pointer;
 }
 
+select {
+  padding: 1em;
+  border-radius: 5em;
+}
+
 .login-link {
   color: #2d57ff;
   font-weight: bold;

@@ -6,6 +6,34 @@
         <p>Unlock all Features!</p>
       </div>
 
+      <select #selectUserType name="selectUserType" id="selectUserType">
+        <option value="" selected disabled>Choose your type</option>
+        <option value="Businessman">Businessman</option>
+        <option value="Client">Client</option>
+      </select>
+
+      <div class="inputC">
+        <i class="fa-regular fa-user"></i>
+        <input
+          type="text"
+          required
+          #firstNameInput="ngModel"
+          ngModel
+          name="firstName"
+          placeholder="First Name"
+        />
+      </div>
+      <div class="inputC">
+        <i class="fa-regular fa-user"></i>
+        <input
+          type="text"
+          required
+          #lstNameInput="ngModel"
+          ngModel
+          name="lastName"
+          placeholder="Last Name"
+        />
+      </div>
       <div class="inputC">
         <i class="fa-regular fa-envelope"></i>
         <input
@@ -17,6 +45,17 @@
           placeholder="Email"
         />
       </div>
+      <div class="inputC" *ngIf="selectUserType.value === 'Businessman'">
+        <i class="fa-regular fa-building"></i>
+        <input
+          type="text"
+          required
+          #companyInput="ngModel"
+          ngModel
+          name="company"
+          placeholder="Company"
+        />
+      </div>
       <div class="inputC">
         <i class="fa-solid fa-key"></i>
         <input
@@ -26,6 +65,17 @@
           ngModel
           name="password"
           placeholder="Password"
+        />
+      </div>
+      <div class="inputC">
+        <i class="fa-solid fa-key"></i>
+        <input
+          type="password"
+          required
+          #confirmPasswordInput="ngModel"
+          ngModel
+          name="confirmPassword"
+          placeholder="Confirm Password"
         />
       </div>
       <div class="rememberMeC">
@@ -41,7 +91,7 @@
       <button class="submit-btn" type="submit">LOG IN</button>
       <p>
         You have account?
-        <a routerLink="/login" class="login-link">Login now</a>
+        <a routerLink="/login" class="login-link">Sign in</a>
       </p>
     </form>
   </div>
