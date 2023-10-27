@@ -6,7 +6,7 @@ const router = express.Router();
 router.post("/login",async (req, res) => {
     try {
             const {email,password} = req.body
-        console.log(req.body)
+            console.log(req.body)
             const token = await usersManager.login(email,password)
 
             res.status(200).json({message:"Successfully logged in",token})
@@ -17,8 +17,8 @@ router.post("/login",async (req, res) => {
 });
 router.post("/register", async (req, res) => {
     try {
-        const {email,username,password,repetedPassword} = req.body
-        const token = await usersManager.register(email,username,password,repetedPassword)
+        const {email,companyName,password,repetedPassword} = req.body
+        const token = await usersManager.register(email,companyName,password,repetedPassword)
 
     res.status(200).json({message:"Successfully registered", token }) 
     } catch (error) {

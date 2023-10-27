@@ -3,7 +3,7 @@ const userModel = require("../models/userModel")
 const bcrypt = require("bcrypt")
 
 
-exports.register = async (email,username,password,repetedPassword) =>{
+exports.register = async (email,companyName,password,repetedPassword) =>{
 
     
     if(!email||!password||!repetedPassword){
@@ -13,7 +13,7 @@ exports.register = async (email,username,password,repetedPassword) =>{
     if(user){
         throw new Error("User with same email already exists")
     }
-    const newUser = await userModel.create({email,username,password,repetedPassword})
+    const newUser = await userModel.create({email,companyName,password,repetedPassword})
 
     
     return login(email,password)

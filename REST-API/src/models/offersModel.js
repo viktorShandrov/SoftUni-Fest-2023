@@ -2,22 +2,19 @@ const mongoose = require("mongoose")
 const bcrypt = require("bcrypt")
 
 const schema = new mongoose.Schema({
-    email:{
+    name:{
         type:String,
-        required:[true,"email is required"],
+        required:[true,"name is required"],
     },
-    companyName:{
+    description:{
         type:String,
-        required:[true,"companyName is required"],
+        required:[true,"description is required"],
     },
-    password:{
+    price:{
         type:String,
-        required:[true,"password is required"],
+        required:[true,"price is required"],
     },
-    isPasswordHashed: {
-        type: Boolean,
-        default: false,
-      }
+
 
 })
 schema.virtual("repetedPassword").set(function(value){
