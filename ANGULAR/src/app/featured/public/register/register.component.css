@@ -3,7 +3,6 @@
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  padding-left: 5em;
 }
 
 .left {
@@ -11,7 +10,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 5em;
+  padding-left: 15em;
 }
 
 .right {
@@ -28,7 +27,7 @@ form {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 2em;
+  gap: 1.1em;
 }
 
 .right img {
@@ -57,12 +56,53 @@ p {
   color: #71717a;
 }
 
+.inputsC {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.inputC {
+  padding: 10px;
+  margin: 0 10px;
+  display: flex;
+  background-color: #eaefff;
+  border: solid #c7ccee 1px;
+  border-radius: 5px;
+}
+.inputC i {
+  color: grey;
+}
+.inputC input {
+  flex: 1;
+  background-color: #eaefff;
+  border: none;
+  outline: none;
+  margin-left: 10px;
+}
+.rememberMeC {
+  display: flex;
+  justify-content: left;
+  gap: 5px;
+  color: grey;
+  margin: 0 10px;
+  font-size: 13px;
+}
+
+.rememberMeC div {
+  font-size: 1.3em;
+}
+
+.accept {
+  color: #2d57ff;
+}
+
 .submit-btn {
   background-color: #2d57ff;
   padding: 1em;
   color: white;
   font-weight: bolder;
-  font-size: 20px;
+  font-size: 18px;
   border: none;
   border-radius: 0.5em;
   cursor: pointer;
@@ -71,6 +111,7 @@ p {
 .login-link {
   color: #2d57ff;
   font-weight: bold;
+  cursor: pointer;
 }
 
 form p:last-child {

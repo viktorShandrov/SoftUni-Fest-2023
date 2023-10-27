@@ -6,7 +6,39 @@
         <p>Unlock all Features!</p>
       </div>
 
-      <button class="submit-btn">LOG IN</button>
+      <div class="inputC">
+        <i class="fa-regular fa-envelope"></i>
+        <input
+          type="text"
+          required
+          #emailInput="ngModel"
+          ngModel
+          name="email"
+          placeholder="Email"
+        />
+      </div>
+      <div class="inputC">
+        <i class="fa-solid fa-key"></i>
+        <input
+          type="password"
+          required
+          #passwordInput="ngModel"
+          ngModel
+          name="password"
+          placeholder="Password"
+        />
+      </div>
+      <div class="rememberMeC">
+        <input
+          type="checkbox"
+          #rememberMeInput="ngModel"
+          ngModel
+          name="rememberMe"
+        />
+        <div>Accept <span class="accept">terms and conditions</span></div>
+      </div>
+
+      <button class="submit-btn" type="submit">LOG IN</button>
       <p>
         You have account?
         <a routerLink="/login" class="login-link">Login now</a>
@@ -14,7 +46,7 @@
     </form>
   </div>
   <div class="right">
-    <img src="../../../../assets/login.png" alt="login" />
+    <img src="../../../../assets/register.png" alt="register" />
     <div class="heading-right">Connect with any device.</div>
     <p>Everything you need is an internet connection.</p>
   </div>

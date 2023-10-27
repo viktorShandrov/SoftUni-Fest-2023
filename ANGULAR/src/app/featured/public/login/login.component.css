@@ -3,7 +3,6 @@
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  padding-left: 5em;
   text-align: center;
 }
 
@@ -13,6 +12,7 @@
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  padding-left: 15em;
 }
 
 .right {
@@ -42,20 +42,19 @@
   opacity: 75%;
 }
 
-.welcomeBack{
+.welcomeBack {
   color: grey;
   text-align: left;
   margin-bottom: 20px;
 }
 
-.other-auth{
+.other-auth {
   display: flex;
   /*flex-direction: column;*/
   justify-content: space-around;
   gap: 20px;
 }
-.other-authBtn{
-
+.other-authBtn {
   padding: 10px 25px;
   background-color: white;
   border-radius: 5px;
@@ -64,14 +63,14 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 }
-.other-authBtn img{
+.other-authBtn img {
   width: 15px;
 }
-hr{
+hr {
   margin: 30px 0;
   color: grey;
-
 }
 
 /* Style for the text */
@@ -84,31 +83,31 @@ hr{
   margin: 0 auto;
   color: grey;
 }
-.inputsC{
+.inputsC {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.inputC{
-  padding: 10px ;
+.inputC {
+  padding: 10px;
   margin: 0 10px;
   display: flex;
   background-color: #eaefff;
   border: solid #c7ccee 1px;
   border-radius: 5px;
 }
-.inputC i{
+.inputC i {
   color: grey;
 }
-.inputC input{
-  flex:1 ;
-  background-color:#eaefff ;
+.inputC input {
+  flex: 1;
+  background-color: #eaefff;
   border: none;
   outline: none;
   margin-left: 10px;
 }
-.rememberMeC{
+.rememberMeC {
   display: flex;
   justify-content: left;
   gap: 5px;
@@ -117,17 +116,24 @@ hr{
   font-size: 13px;
 }
 
-
-.loginBtn{
+.loginBtn {
   width: 100%;
   padding: 15px 0;
   background-color: #2d57ff;
   color: white;
   font-weight: bolder;
   font-size: 20px;
+  border: none;
   text-transform: uppercase;
   border-radius: 10px;
   margin-top: 30px;
+  cursor: pointer;
+}
+
+.register-link {
+  color: #2d57ff;
+  font-weight: bold;
+  cursor: pointer;
 }
 /* .body {
   margin: 0;
