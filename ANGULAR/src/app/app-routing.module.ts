@@ -6,6 +6,7 @@ import { CatalogComponent } from './featured/private/catalog/catalog.component';
 import { CreateComponent } from './featured/private/create/create.component';
 import { DetailsComponent } from './featured/private/details/details.component';
 import { ProfileComponent } from './featured/private/profile/profile.component';
+import { RegisterComponent } from './featured/public/register/register.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,11 @@ const routes: Routes = [
     path: 'login',
     pathMatch: 'full',
     component: LoginComponent,
+  },
+  {
+    path: 'register',
+    pathMatch: 'full',
+    component: RegisterComponent,
   },
   {
     path: 'catalog',
