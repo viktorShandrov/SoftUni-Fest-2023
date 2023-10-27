@@ -71,4 +71,5 @@ router.get("/searchBusinessman/:searchParam", async (req, res) => {
     }
 
 });
+
 module.exports = router;

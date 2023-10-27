@@ -1,6 +1,7 @@
 const express = require("express");
 const usersManager = require("../managers/usersManager");
 const {isAuth} = require("../utils/auth");
+const offerManager = require("../managers/offerManager");
 
 const router = express.Router();
 
@@ -37,6 +38,18 @@ router.get("/userInfo",isAuth, async (req, res) => {
         const user = await usersManager.getUserInfo(_id)
 
     res.status(200).json(user)
+    } catch (error) {
+        console.log(error)
+        res.status(400).json({message:error.message})
+    }
+
+});
+
+router.get("/getAllBusinessman", async (req, res) => {
+    try{
+
+        const businessman = await usersManager.getAllBusinessman()
+        res.status(200).json({users:businessman})
     } catch (error) {
         console.log(error)
         res.status(400).json({message:error.message})

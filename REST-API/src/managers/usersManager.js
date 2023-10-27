@@ -21,6 +21,9 @@ exports.register = async (email,companyName,password,repeatedPassword,userType,l
     return login(email,password)
 
 }
+exports.getAllBusinessman = async ()=>{
+    return userModel.find({userType:"businessman"})
+}
 const login = async(email,password)=>{
     const user = await userModel.findOne({email})
     console.log(user)
