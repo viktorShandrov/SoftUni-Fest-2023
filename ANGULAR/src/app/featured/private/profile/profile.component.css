@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 9em;
+  gap: 4em;
+  width: 40em;
+  margin-left: 32.5em;
+  padding: 5em;
+  background-color: antiquewhite;
+  border-radius: 2em;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.user .name {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.offers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+  flex-wrap: wrap;
+  max-width: 40em;
+}
