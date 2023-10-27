@@ -9,8 +9,10 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { FeaturedModule } from './featured/featured.module';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+import {ApiInterceptor} from "./core/interceptors/api.interceptor";
+import {TokenInterceptor} from "./core/interceptors/token.interceptor";
 
 
 
