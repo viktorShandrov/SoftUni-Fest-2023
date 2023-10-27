@@ -19,8 +19,6 @@ export class UserService {
     }).subscribe(
       (res: any) => {
         this.setToken(res.payload.token);
-        this.setUserId(res.payload.userId);
-        this.Router.navigate(['/chats']);
       },
       (error) => {
         this.ToastrService.error(error.error.message, 'Error');
@@ -41,7 +39,6 @@ export class UserService {
     }).subscribe(
       (res: any) => {
         this.setToken(res.token);
-       
       },
       (error) => {
         this.ToastrService.error(error.error.message, 'Error');
