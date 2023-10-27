@@ -5,29 +5,34 @@
     <div class="signup">
       <form #registerForm="ngForm" (ngSubmit)="onRegisterSubmit(registerForm)">
         <label for="chk" aria-hidden="true">Sign up</label>
+
+        <select
+          #selectUserType
+          name="selectUserType"
+          id="selectUserType"
+          ngModel=""
+        >
+          <option value="Businessman">Businessman</option>
+          <option value="Client">Client</option>
+        </select>
+
         <input
-          #usernameInput="ngModel"
+          #firstNameInput="ngModel"
           type="text"
-          name="username"
-          placeholder="Username"
-          ngModel
-          minlength="6"
+          name="firstName"
+          placeholder="First Name"
+          ngModel=""
           required
         />
-        <div
-          class="usernameErrorsContainer errorsContainer"
-          *ngIf="
-            usernameInput.invalid &&
-            (usernameInput.touched || usernameInput.dirty)
-          "
-        >
-          <h6 *ngIf="usernameInput.errors?.['required']" class="errorMessage">
-            Username is required
-          </h6>
-          <h6 *ngIf="usernameInput.errors?.['minlength']" class="errorMessage">
-            Username must be at least 6 chars
-          </h6>
-        </div>
+
+        <input
+          #firstNameInput="ngModel"
+          type="text"
+          name="lastName"
+          placeholder="Last Name"
+          ngModel=""
+          required
+        />
 
         <input
           #emailInput="ngModel"
@@ -100,6 +105,17 @@
             Password must be at least 8 chars
           </h6>
         </div>
+
+        <input
+          #companyInput="ngModel"
+          type="text"
+          name="company"
+          placeholder="Your company"
+          *ngIf="selectUserType.value === 'Businessman'"
+          ngModel=""
+          required
+        />
+
         <button type="submit">Sign up</button>
       </form>
     </div>

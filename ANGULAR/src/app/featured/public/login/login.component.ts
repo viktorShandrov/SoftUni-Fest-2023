@@ -19,10 +19,10 @@ export class LoginComponent {
   }
   onRegisterSubmit(form: any) {
     this.UserService.register(
-      form.form.value.username,
       form.form.value.email,
       form.form.value.password,
-      form.form.value.repeatedPassword
+      form.form.value.repeatedPassword,
+      form.form.value.company
     );
   }
 }
