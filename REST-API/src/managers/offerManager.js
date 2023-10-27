@@ -5,5 +5,5 @@ const OfferModel = require("../models/offersModel")
 
 exports.createOffer = (name,description,price)=>{
 
-    Offer
+    const offer = await OfferModel.create
 }
