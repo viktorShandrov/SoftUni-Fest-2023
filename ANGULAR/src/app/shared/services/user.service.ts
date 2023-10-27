@@ -18,7 +18,7 @@ export class UserService {
       password,
     }).subscribe(
       (res: any) => {
-        this.setToken(res.payload.token);
+        this.setToken(res.token);
       },
       (error) => {
         this.ToastrService.error(error.error.message, 'Error');
