@@ -2,7 +2,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3em;
+  flex-wrap: wrap;
+  max-width: 120em;
+  gap: 2.5em;
+  margin-bottom: 10em;
+  margin-top: 5em;
+  margin-left: 5em;
+  margin-right: 5em;
 }
 
 .businessman {
@@ -12,6 +18,6 @@
   align-items: center;
   background-color: red;
   border-radius: 1em;
-  opacity: 0.5;
+  opacity: 0.6;
   padding: 1em;
 }

@@ -27,5 +27,45 @@ export class CatalogComponent {
       company: 'sada',
       name: 'asdad',
     },
+    {
+      company: 'sada',
+      name: 'asdad',
+    },
+    {
+      company: 'sada',
+      name: 'asdad',
+    },
+    {
+      company: 'sada',
+      name: 'asdad',
+    },
+    {
+      company: 'sada',
+      name: 'asdad',
+    },
+    {
+      company: 'sada',
+      name: 'asdad',
+    },
+    {
+      company: 'sada',
+      name: 'asdad',
+    },
+    {
+      company: 'sada',
+      name: 'asdad',
+    },
+    {
+      company: 'sada',
+      name: 'asdad',
+    },
+    {
+      company: 'sada',
+      name: 'asdad',
+    },
+    {
+      company: 'sada',
+      name: 'asdad',
+    },
   ];
 }
