@@ -1,0 +1,45 @@
+header {
+  padding: 1em;
+  background-color: #737ed4;
+  color: white;
+}
+
+.logo {
+  font-size: 2em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 2em;
+  margin-left: 2em;
+}
+
+li {
+  list-style-type: none;
+  font-size: 1.3em;
+  padding: 0.7em;
+  border-radius: 5em;
+  background-color: #263ffb;
+  cursor: pointer;
+}
+
+li:hover {
+  background-color: #3d51eb;
+}
+
+li:first-child {
+  background-color: #737ed4;
+}
+
+li:first-child:hover {
+  background-color: #8f97db;
+}
+
+.authentication {
+  display: flex;
+  gap: 3em;
+}

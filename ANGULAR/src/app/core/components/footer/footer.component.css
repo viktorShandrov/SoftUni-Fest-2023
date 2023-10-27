@@ -1,0 +1,15 @@
+footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 2em;
+}
+
+.logo {
+  font-size: 2em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+p {
+  font-size: 1.2em;
+}
