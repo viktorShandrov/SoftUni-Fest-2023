@@ -1,0 +1,78 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding-left: 5em;
+}
+
+.left {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 5em;
+}
+
+.right {
+  background-color: #343859;
+  height: 90vh;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2em;
+}
+
+.right img {
+  width: 35em;
+  margin-bottom: 2em;
+}
+
+.heading-left {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.heading-right {
+  color: #e0eaff;
+  font-weight: 700;
+  font-size: 1.4em;
+}
+
+p {
+  color: #e0eaff;
+  opacity: 75%;
+  margin: 0 auto;
+}
+
+.left p {
+  color: #71717a;
+}
+
+.submit-btn {
+  background-color: #2d57ff;
+  padding: 1em;
+  color: white;
+  font-weight: bolder;
+  font-size: 20px;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+}
+
+.login-link {
+  color: #2d57ff;
+  font-weight: bold;
+}
+
+form p:last-child {
+  font-size: 1.2em;
+}

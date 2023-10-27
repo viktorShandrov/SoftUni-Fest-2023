@@ -7,6 +7,7 @@ import { ProfileComponent } from './private/profile/profile.component';
 import { CreateComponent } from './private/create/create.component';
 import { CatalogComponent } from './private/catalog/catalog.component';
 import { DetailsComponent } from './private/details/details.component';
+import { RegisterComponent } from './public/register/register.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { DetailsComponent } from './private/details/details.component';
     CreateComponent,
     CatalogComponent,
     DetailsComponent,
+    RegisterComponent,
   ],
   imports: [
     CommonModule,
