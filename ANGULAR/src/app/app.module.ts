@@ -4,14 +4,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-<<<<<<< Updated upstream
+
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { FeaturedModule } from './featured/featured.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
-=======
+
 import {SharedModule} from "./shared/shared.module";
 import {CoreModule} from "./core/core.module";
 import {FeaturedModule} from "./featured/featured.module";
@@ -19,7 +19,7 @@ import {FormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {ApiInterceptor} from "./core/interceptors/api.interceptor";
 import {TokenInterceptor} from "./core/interceptors/token.interceptor";
->>>>>>> Stashed changes
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -34,10 +34,7 @@ import {TokenInterceptor} from "./core/interceptors/token.interceptor";
     FeaturedModule,
     FormsModule,
   ],
-<<<<<<< Updated upstream
-  providers: [],
-  bootstrap: [AppComponent],
-=======
+
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
@@ -51,6 +48,5 @@ import {TokenInterceptor} from "./core/interceptors/token.interceptor";
     },
   ],
   bootstrap: [AppComponent]
->>>>>>> Stashed changes
 })
 export class AppModule {}
