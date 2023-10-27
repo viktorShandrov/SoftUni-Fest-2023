@@ -4,6 +4,7 @@ import { MainComponent } from './featured/public/main/main.component';
 import { LoginComponent } from './featured/public/login/login.component';
 import { CatalogComponent } from './featured/private/catalog/catalog.component';
 import {CreateComponent} from "./featured/private/create/create.component";
+import {DetailsComponent} from "./featured/private/details/details.component";
 
 const routes: Routes = [
   {
@@ -25,6 +26,11 @@ const routes: Routes = [
     path: 'createOffer',
     pathMatch: 'full',
     component: CreateComponent,
+  },
+  {
+    path: 'offerDetails',
+    pathMatch: 'full',
+    component: DetailsComponent,
   },
 ];
 

@@ -1,0 +1,24 @@
+.container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+.wrapper{
+  display: flex;
+  width: 80%;
+  margin: 20px;
+  background-color: white;
+  border-radius: 40px;
+  padding: 40px;
+}
+
+.picture{
+  color: white;
+  background: grey;
+  border-radius: 140px;
+  padding: 20px;
+
+
+}

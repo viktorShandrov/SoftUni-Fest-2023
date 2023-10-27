@@ -6,6 +6,7 @@ import { LoginComponent } from './public/login/login.component';
 import { ProfileComponent } from './private/profile/profile.component';
 import { CreateComponent } from './private/create/create.component';
 import { CatalogComponent } from './private/catalog/catalog.component';
+import { DetailsComponent } from './private/details/details.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { CatalogComponent } from './private/catalog/catalog.component';
     ProfileComponent,
     CreateComponent,
     CatalogComponent,
+    DetailsComponent,
   ],
   imports: [
     CommonModule,
