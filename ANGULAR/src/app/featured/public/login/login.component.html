@@ -1,18 +1,55 @@
 <div class="container">
   <div class="left">
-    <form action="">
+    <form #form='ngForm' (ngSubmit)="onLoginSubmit(form)">
       <div class="heading">
         <h1>Login to your account</h1>
-        <p>Welcome back! Select method to log in:</p>
+        <p class="welcomeBack">Welcome back! Select method to log in:</p>
       </div>
       <div class="other-auth">
-        <button>
+        <button class="other-authBtn">
           <img src="../../../../assets/google.png" alt="google" /> Google
         </button>
-        <button>
+        <button class="other-authBtn">
           <img src="../../../../assets/facebook.png" alt="facebook" /> Facebook
         </button>
       </div>
+      <hr>
+        <div class="centered-text">or log in with email</div>
+
+      <div class="inputsC">
+        <div class="inputC">
+          <i class="fa-regular fa-envelope"></i>
+          <input type="text"
+                 required
+                 #emailInput = 'ngModel'
+                 ngModel
+                 name="email"
+                 placeholder="Email"
+          >
+        </div>
+        <div class="inputC">
+          <i class="fa-solid fa-key"></i>
+          <input type="password"
+                 required
+                 #passwordInput = 'ngModel'
+                 ngModel
+                 name="password"
+                 placeholder="Password"
+          >
+        </div>
+        <div class="rememberMeC">
+          <input type="checkbox"
+                 #rememberMeInput = 'ngModel'
+                 ngModel
+                 name="rememberMe"
+
+          >
+          <span>Remember me</span>
+        </div>
+
+
+      </div>
+      <button class="loginBtn" type="submit">Log In</button>
     </form>
   </div>
   <div class="right">
