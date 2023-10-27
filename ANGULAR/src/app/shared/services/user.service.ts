@@ -28,16 +28,16 @@ export class UserService {
     );
   }
   register(
-    username: string,
     email: string,
     password: string,
-    repeatedPassword: string
+    repeatedPassword: string,
+    company: string
   ) {
     this.HttpService.postRequest('api/users/register', {
-      username,
       email,
       password,
       repeatedPassword,
+      company,
     }).subscribe(
       (res: any) => {
         this.setToken(res.token);

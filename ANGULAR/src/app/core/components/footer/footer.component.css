@@ -1,10 +1,17 @@
 footer {
   display: flex;
   justify-content: space-around;
-  padding: 2em;
+  padding: 1.5em;
+  color: white;
 }
 
 .logo {
+  font-size: 2em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.info {
   font-size: 2em;
   font-weight: bold;
   cursor: pointer;
