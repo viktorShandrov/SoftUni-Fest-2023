@@ -15,6 +15,10 @@ import { CatalogComponent } from './private/catalog/catalog.component';
     CreateComponent,
     CatalogComponent,
   ],
-  imports: [CommonModule, FormsModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+
+  ],
 })
 export class FeaturedModule {}
