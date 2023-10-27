@@ -20,7 +20,13 @@ import { TokenInterceptor } from './core/interceptors/token.interceptor';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot(
+      {
+        positionClass: 'toast-top-right',
+        timeOut: 3000, // 3 seconds
+        closeButton: true,
+      },
+    ),
     SharedModule,
     CoreModule,
     HttpClientModule,
