@@ -40,10 +40,9 @@ export class UserService {
       repeatedPassword,
     }).subscribe(
       (res: any) => {
-        console.log(res);
-        this.setToken(res.payload.token);
-        this.setUserId(res.payload.userId);
-        this.Router.navigate(['/chats']);
+        this.setToken(res.token);
+        // this.setUserId(res.payload.userId);
+        // this.Router.navigate(['/chats']);
       },
       (error) => {
         this.ToastrService.error(error.error.message, 'Error');

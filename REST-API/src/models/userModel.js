@@ -8,7 +8,13 @@ const schema = new mongoose.Schema({
     },
     companyName:{
         type:String,
-        required:[true,"companyName is required"],
+    },
+    userType:String,
+    firstName:{
+        type:String,
+    },
+    lastName:{
+        type:String,
     },
     password:{
         type:String,
