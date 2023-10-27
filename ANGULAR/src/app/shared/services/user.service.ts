@@ -8,24 +8,26 @@ import {constants} from "../constants";
   providedIn: 'root',
 })
 export class UserService {
-  userRole=""
-  userId="f"
+  userRole:string
+  userId:string
   constructor(
     private HttpService: HttpService,
     private ToastrService: ToastrService,
     private Router: Router
-  ) {}
+  ) {
+    this.userRole=""
+    this.userId=""
+  }
   login(email: string, password: string) {
     this.HttpService.postRequest('api/users/login', {
       email,
       password,
     }).subscribe(
       (res: any) => {
-        console.log(res.payload)
         this.setToken(res.payload.token);
         this.setUserRole(res.payload.userRole)
         this.setUserId(res.payload.userId)
-        console.log(this.userId)
+        this.Router.navigate(['/offerDetails/653bd0ce4eb65e44922a4e1b']);
 
       },
       (error) => {
@@ -55,6 +57,19 @@ export class UserService {
         this.ToastrService.error(error.error.message, 'Error');
       }
     );
+  }
+  fetchUserInfo(){
+    this.HttpService.getRequest("api/users/userInfo").subscribe(
+      (res:any)=>{
+        const {email,_id,userType} = res
+        console.log(res)
+        this.setUserRole(userType)
+        this.setUserId(_id)
+      },
+      (error)=>{
+        this.ToastrService.error(error.message,"Error")
+      }
+    )
   }
   setUserRole(role: string) {
     localStorage.setItem('userRole', role);

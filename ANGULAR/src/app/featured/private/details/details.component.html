@@ -2,17 +2,16 @@
   <div class="wrapper">
     <div class="businessmanC">
       <i class="fa-solid fa-user picture"></i>
-      <h1 class="userName">{{currentOffer.ownerId.username}}</h1>
-      <h6 class="userEmail">{{currentOffer.ownerId.email}}</h6>
+      <h1 class="userName">{{currentOffer.ownerId?.companyName}}</h1>
+      <h6 class="userEmail">{{currentOffer.ownerId?.email}}</h6>
       <button  class="profileBtn btn" >Профил</button>
-      <button *ngIf="UserService.userId===currentOffer.ownerId._id" class="editBtn btn" >Редактиране</button>
-      {{UserService.userId}}
+      <button (click)="redirectToEdit()" *ngIf="UserService.userId===currentOffer.ownerId?._id" class="editBtn btn" >Редактиране</button>
+
       <button class="deleteBtn btn" >Изтриване</button>
-      {{currentOffer.ownerId._id}}
 
     </div>
     <div class="offerDetails">
-      <h2 class="offerName">{{currentOffer.name}}</h2>
+      <h2 class="offerName">{{currentOffer?.name}}</h2>
       <div class="details">
         {{currentOffer.description}}
       </div>

@@ -13,6 +13,10 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { ApiInterceptor } from './core/interceptors/api.interceptor';
 import { TokenInterceptor } from './core/interceptors/token.interceptor';
+import {RouterService} from "./core/services/router.service";
+
+
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,6 +39,7 @@ import { TokenInterceptor } from './core/interceptors/token.interceptor';
   ],
 
   providers: [
+    RouterService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ApiInterceptor,

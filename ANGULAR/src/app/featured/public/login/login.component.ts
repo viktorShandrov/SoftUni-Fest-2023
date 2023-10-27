@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {AfterViewInit, Component} from '@angular/core';
 import { UserService } from '../../../shared/services/user.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
@@ -8,18 +8,22 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
-export class LoginComponent {
+export class LoginComponent implements AfterViewInit{
   constructor(
     private UserService: UserService,
     private ToastrService: ToastrService,
     private Router: Router
   ) {
-    localStorage.clear();
-    setTimeout(() => {}, 2000);
+    // setTimeout(() => {}, 2000);
   }
+  ngAfterViewInit() {
+    localStorage.clear();
+
+  }
+
   onLoginSubmit(form: any) {
     this.UserService.login(form.value.email, form.value.password);
-    this.Router.navigate(['/catalog']);
+
   }
   onRegisterSubmit(form: any) {
     this.UserService.register(

@@ -1,5 +1,6 @@
 const express = require("express");
 const usersManager = require("../managers/usersManager");
+const {isAuth} = require("../utils/auth");
 
 const router = express.Router();
 
@@ -28,6 +29,19 @@ router.post("/register", async (req, res) => {
         res.status(400).json({message:error.message})
     }
     
+});
+router.get("/userInfo",isAuth, async (req, res) => {
+    try {
+        const {_id} = req.user
+
+        const user = await usersManager.getUserInfo(_id)
+
+    res.status(200).json(user)
+    } catch (error) {
+        console.log(error)
+        res.status(400).json({message:error.message})
+    }
+
 });
 
 module.exports = router;

@@ -11,6 +11,7 @@ router.get("/offer/:id", async (req, res) => {
         const {_id} = req.user
 
         const offer = await offerManager.getOffer(id)
+        console.log(offer)
         res.status(200).json({offer})
     } catch (error) {
         console.log(error)

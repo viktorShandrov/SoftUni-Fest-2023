@@ -8,6 +8,7 @@ import { CreateComponent } from './private/create/create.component';
 import { CatalogComponent } from './private/catalog/catalog.component';
 import { DetailsComponent } from './private/details/details.component';
 import { RegisterComponent } from './public/register/register.component';
+import {CoreModule} from "../core/core.module";
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { RegisterComponent } from './public/register/register.component';
   imports: [
     CommonModule,
     FormsModule,
+    CoreModule
 
   ],
 })

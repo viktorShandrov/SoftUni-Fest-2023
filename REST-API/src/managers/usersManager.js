@@ -2,7 +2,9 @@ const utils = require("../utils/utils")
 const userModel = require("../models/userModel")
 const bcrypt = require("bcrypt")
 
-
+exports.getUserInfo=async(id)=>{
+    return userModel.findById(id)
+}
 exports.register = async (email,companyName,password,repeatedPassword,userType,lastName,firstName) =>{
 
     console.log(email,companyName,password,repeatedPassword,userType,lastName,firstName)
