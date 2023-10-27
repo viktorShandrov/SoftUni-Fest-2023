@@ -32,6 +32,17 @@ export class DetailsComponent implements OnInit{
     this.CreateService.offer = this.currentOffer
     this.Router.navigate(['/createOffer'], { queryParams: { edit: 'true' } });
   }
+  delete(id:string){
+    this.DetailsService.delete(id).subscribe(
+      (res)=>{
+        this.ToastrService.success("Successfully deleted","Happy message")
+        this.Router.navigate(["/profile"])
+      },
+      (error)=>{
+        this.ToastrService.error(error.message,"Error")
+      }
+    )
+  }
   ngOnInit() {
 
 

@@ -36,9 +36,10 @@ router.post("/createOffer", async (req, res) => {
 
 router.post("/editOffer", async (req, res) => {
     try {
-        const {offerId,name,description,price} = req.body
-        const {_id} = req.user
-        const offer = await offerManager.editOffer(offerId,name,description,price)
+        const {_id,name,description,price} = req.body
+        // const {_id:userId} = req.user
+        console.log(_id)
+        const offer = await offerManager.editOffer(_id,name,description,price)
         res.status(200).json({offer})
     } catch (error) {
         console.log(error)

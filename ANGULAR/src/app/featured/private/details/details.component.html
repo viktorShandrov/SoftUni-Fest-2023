@@ -7,7 +7,7 @@
       <button  class="profileBtn btn" >Профил</button>
       <button (click)="redirectToEdit()" *ngIf="UserService.userId===currentOffer.ownerId?._id" class="editBtn btn" >Редактиране</button>
 
-      <button class="deleteBtn btn" >Изтриване</button>
+      <button (click)="delete(currentOffer._id)" class="deleteBtn btn" >Изтриване</button>
 
     </div>
     <div class="offerDetails">

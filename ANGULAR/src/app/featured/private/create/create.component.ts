@@ -24,7 +24,6 @@ export class CreateComponent {
 
 
   editOffer(offer:any){
-
     this.CreateService.editOffer(offer)
   }
 

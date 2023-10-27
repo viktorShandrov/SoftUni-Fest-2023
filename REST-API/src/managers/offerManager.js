@@ -14,6 +14,7 @@ exports.getOffer = async(offerId)=>{
 }
 
 exports.editOffer = async(id,name,description,price)=>{
+
     const offer  = await OfferModel.findById(id)
     offer.name = name
     offer.description = description

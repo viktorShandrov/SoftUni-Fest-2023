@@ -23,9 +23,9 @@ export class CreateService {
     return this.HttpClient.post("api/items/createOffer",{name,description,price})
   }
   editOffer(offer:any){
-    this.HttpClient.post("api/items/editOffer",{offer}).subscribe(
+    this.HttpClient.post("api/items/editOffer",offer).subscribe(
       (res)=>{
-
+        console.log(res)
       },
       (error)=>{
         this.ToastrService.error(error.message,"Error")

@@ -10,6 +10,10 @@ export class DetailsService {
     private Http:HttpClient,
 
   ) { }
+
+  delete(offerId:string){
+    return this.Http.post(`api/items/deleteOffer`,{offerId})
+  }
   getOffer(id:string){
     return this.Http.get(`api/items/offer/${id}`)
   }

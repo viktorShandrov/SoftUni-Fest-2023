@@ -1,4 +1,4 @@
-<form #form='ngForm' (ngSubmit)="submit(form)">
+<form #form='ngForm' >
   <label for="nameInput">Име на оферта</label>
   <input id="nameInput" required [(ngModel)]="CreateService.offer.name" type="text" name="name" #nameInput='ngModel' placeholder="Име на оферта...">
 
@@ -9,6 +9,8 @@
 
     <input id="priceInput" required [(ngModel)]="CreateService.offer.price" name="price" type="number" #priceInput='ngModel' placeholder="Цена на оферта...">
 
-  <button *ngIf="!editMode"type="submit">Създай</button>
+  <button (click)="submit(form)" *ngIf="!editMode"type="submit">Създай</button>
+
+
   <button (click)="editOffer(CreateService.offer)" *ngIf="editMode" type="submit">Редактирай</button>
 </form>

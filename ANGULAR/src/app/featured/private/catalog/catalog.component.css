@@ -13,11 +13,24 @@
 
 .businessman {
   display: flex;
+  max-width: 150px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: red;
   border-radius: 1em;
   opacity: 0.6;
-  padding: 1em;
+  /*padding: 1em;*/
+}
+
+img{
+  width: 100%;
+}
+
+.companyName{
+  padding: 5px 0;
+  background-color: #9a9a9a;
+}
+.serviceName{
+  padding: 10px 0;
 }
