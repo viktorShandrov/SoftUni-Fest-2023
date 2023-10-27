@@ -22,6 +22,7 @@ router.post("/createOffer", async (req, res) => {
     try {
         const {name,description,price} = req.body
         const {_id} = req.user
+        console.log(_id)
 
         const offer = await offerManager.createOffer(name,description,price,_id)
         res.status(200).json({offer})

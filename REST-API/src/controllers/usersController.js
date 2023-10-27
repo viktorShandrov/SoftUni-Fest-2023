@@ -7,9 +7,9 @@ router.post("/login",async (req, res) => {
     try {
             const {email,password} = req.body
             console.log(req.body)
-            const token = await usersManager.login(email,password)
+            const payload = await usersManager.login(email,password)
 
-            res.status(200).json({message:"Successfully logged in",token})
+            res.status(200).json({message:"Successfully logged in",payload})
 
     } catch (error) {
         console.log(error)
@@ -20,9 +20,9 @@ router.post("/register", async (req, res) => {
     try {
         const {email,companyName,firstName,lastName,password,repeatedPassword,userType} = req.body
 
-        const token = await usersManager.register(email,companyName,password,repeatedPassword,userType,lastName,firstName)
+        const payload = await usersManager.register(email,companyName,password,repeatedPassword,userType,lastName,firstName)
 
-    res.status(200).json({message:"Successfully registered", token }) 
+    res.status(200).json({message:"Successfully registered", payload })
     } catch (error) {
         console.log(error)
         res.status(400).json({message:error.message})

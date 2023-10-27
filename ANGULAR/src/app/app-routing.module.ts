@@ -34,7 +34,7 @@ const routes: Routes = [
     component: CreateComponent,
   },
   {
-    path: 'offerDetails',
+    path: 'offerDetails/:id',
     pathMatch: 'full',
     component: DetailsComponent,
   },

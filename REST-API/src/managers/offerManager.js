@@ -10,7 +10,7 @@ exports.createOffer = async(name,description,price,ownerId)=>{
 
 }
 exports.getOffer = async(offerId)=>{
-    return OfferModel.findById(offerId)
+    return OfferModel.findById(offerId).populate("ownerId")
 }
 
 exports.editOffer = async(id,name,description,price)=>{
