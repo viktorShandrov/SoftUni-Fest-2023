@@ -30,3 +30,47 @@
 .hero .heading p {
   font-size: 1.5em;
 }
+
+
+
+
+.reviews{
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 40px;
+  justify-content: center;
+}
+.reviewC{
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  gap: 40px;
+  padding: 20px;
+  width: 300px;
+}
+.name{
+  text-align: center;
+}
+.reviewerImage{
+  border-radius: 100px;
+  width: 100px;
+  height: 100px;
+}
+.starsC{
+  border-radius: 20px;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: #FFAEAE;
+  display: flex;
+  gap:5px ;
+}
+.fa-star{
+  color: yellow;
+}
+.comment{
+  font-weight: initial;
+  font-size: 14px;
+  padding: 5px;
+}
+
