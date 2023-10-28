@@ -8,6 +8,7 @@ import { ProfileComponent } from './featured/private/profile/profile.component';
 import { RegisterComponent } from './featured/public/register/register.component';
 import {PaymentSuccessfullComponent} from "./featured/private/payment-successfull/payment-successfull.component";
 import {PaymentUnsuccessfullComponent} from "./featured/private/payment-unsuccessfull/payment-unsuccessfull.component";
+import {HomeComponent} from "./featured/private/home/home.component";
 
 const routes: Routes = [
   {
@@ -54,6 +55,11 @@ const routes: Routes = [
     path: 'unsuccessfulPayment',
     pathMatch: 'full',
     component: PaymentUnsuccessfullComponent,
+  },
+  {
+    path: 'home',
+    pathMatch: 'full',
+    component: HomeComponent,
   },
 ];
 
