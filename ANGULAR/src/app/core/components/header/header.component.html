@@ -26,7 +26,7 @@
         </div>
       </div>
     </ul>
-    <div class="search-field hidden">
+    <div class="search-field hidden" *ngIf="UserService.getUserId() !== null">
       <i class="fa-solid fa-magnifying-glass"></i>
       <input
         #param

@@ -133,3 +133,13 @@ form p:last-child {
     width: 40em;
   }
 }
+
+@media (max-width: 945px) {
+  .right {
+    display: none;
+  }
+
+  .left {
+    margin: 0 auto;
+  }
+}
