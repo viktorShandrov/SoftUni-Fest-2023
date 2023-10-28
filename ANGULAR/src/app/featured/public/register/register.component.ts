@@ -15,7 +15,6 @@ export class RegisterComponent {
   }
 
   onRegisterSubmit(form: any) {
-    console.log(form.form.value);
     this.UserService.register(
       form.form.value.email,
       form.form.value.password,

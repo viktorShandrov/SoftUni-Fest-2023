@@ -6,15 +6,15 @@ import { CreateComponent } from './featured/private/create/create.component';
 import { DetailsComponent } from './featured/private/details/details.component';
 import { ProfileComponent } from './featured/private/profile/profile.component';
 import { RegisterComponent } from './featured/public/register/register.component';
-import {PaymentSuccessfullComponent} from "./featured/private/payment-successfull/payment-successfull.component";
-import {PaymentUnsuccessfullComponent} from "./featured/private/payment-unsuccessfull/payment-unsuccessfull.component";
-import {HomeComponent} from "./featured/private/home/home.component";
+import { PaymentSuccessfullComponent } from './featured/private/payment-successfull/payment-successfull.component';
+import { PaymentUnsuccessfullComponent } from './featured/private/payment-unsuccessfull/payment-unsuccessfull.component';
+import { HomeComponent } from './featured/private/home/home.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: '/login',
+    redirectTo: '/home',
   },
   {
     path: 'login',
