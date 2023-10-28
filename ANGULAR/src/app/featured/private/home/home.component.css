@@ -83,7 +83,7 @@
 }
 .animate {
   opacity: 0;
-  /*transition: opacity 3s ease;*/
+  transition: opacity 3s ease;
 }
 
 .animate.animated {

@@ -47,6 +47,7 @@ router.post("/paymentMade",(req,res)=>{
 
 
             const {userId,offerId} = data.object.metadata
+        console.log(userId,offerId)
 
             offerManager.addOfferToPurchasedOffers(userId,offerId)
         }

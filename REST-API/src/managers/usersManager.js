@@ -63,7 +63,7 @@ exports.register = async (
   return login(email, password);
 };
 exports.getAllBusinessman = async () => {
-  return userModel.find({ userType: "businessman" });
+  return userModel.find({ userType: "Businessman" });
 };
 const login = async (email, password) => {
   const user = await userModel.findOne({ email });

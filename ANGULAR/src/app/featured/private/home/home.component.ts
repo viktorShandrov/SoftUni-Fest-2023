@@ -20,7 +20,7 @@ export class HomeComponent implements AfterViewInit{
       for (const elementToAnimateElement of elementsToAnimate) {
         const elementPosition = elementToAnimateElement!.getBoundingClientRect().top;
         if (elementPosition - window.innerHeight < offset) {
-          elementToAnimateElement!.style.transition = `opacity 10s ease;`
+          // elementToAnimateElement!.style.transition = `opacity 10s ease;`
           elementToAnimateElement!.classList.add('animated');
         }
       }

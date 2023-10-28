@@ -21,9 +21,9 @@ router.post("/login",async (req, res) => {
 });
 router.post("/register", async (req, res) => {
     try {
-        const {email,companyName,firstName,lastName,password,repeatedPassword,userType} = req.body
+        const {email,company,firstName,lastName,password,repeatedPassword,userType} = req.body
         console.log(req.body)
-        const payload = await usersManager.register(email,companyName,password,repeatedPassword,userType,lastName,firstName)
+        const payload = await usersManager.register(email,company,password,repeatedPassword,userType,lastName,firstName)
 
     res.status(200).json({message:"Successfully registered", payload })
     } catch (error) {
