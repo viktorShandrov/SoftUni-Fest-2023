@@ -6,7 +6,7 @@ import {UserService} from "../../shared/services/user.service";
   providedIn: 'root'
 })
 export class RouterService {
-
+  publicRoutes = ["login","register","home"]
   constructor(
     private router: Router,
     private UserService: UserService,
@@ -22,6 +22,15 @@ export class RouterService {
           console.log("initial load")
           // Perform your action here
           this.setUserInfo();
+        }
+
+
+        console.log(event.url)
+        if(!this.publicRoutes.includes(event.url.split("/")[0])){
+
+          if(!localStorage.getItem("token")){
+            this.router.navigate(['/login'])
+          }
         }
       }
     });

@@ -27,7 +27,7 @@ export class UserService {
         this.setToken(res.payload.token);
         this.setUserRole(res.payload.userRole);
         this.setUserId(res.payload.userId);
-        this.Router.navigate(['/offerDetails/653bd0ce4eb65e44922a4e1b']);
+        this.Router.navigate(['/catalog']);
       },
       (error) => {
         this.ToastrService.error(error.error.message, 'Error');
