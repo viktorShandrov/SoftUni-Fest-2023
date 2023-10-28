@@ -13,8 +13,8 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-right: 2em;
-  margin-left: 2em;
+  margin-right: 3em;
+  margin-left: 3em;
 }
 
 li {
@@ -98,7 +98,7 @@ a {
   display: none;
 }
 
-@media (max-width: 790px) {
+@media (max-width: 865px) {
   ul {
     margin-left: 0.2em;
     margin-right: 0.2em;
@@ -109,7 +109,7 @@ a {
   }
 }
 
-@media (max-width: 707px) {
+@media (max-width: 715px) {
   .search-field {
     display: none;
   }

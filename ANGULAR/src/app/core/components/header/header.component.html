@@ -2,7 +2,7 @@
   <nav>
     <ul>
       <div class="logo"><a routerLink="/home">OffersBg</a></div>
-      <div class="search-field">
+      <div class="search-field" *ngIf="UserService.getUserId() !== null">
         <i class="fa-solid fa-magnifying-glass"></i>
         <input
           #param
