@@ -1,26 +1,46 @@
 <div class="container">
-  <div class="wrapper">
-    <div class="businessmanC">
+  <div class="profile">
+    <div class="user-info">
       <i class="fa-solid fa-user picture"></i>
-      <h1 class="userName">{{currentOffer?.ownerId?.companyName}}</h1>
-      <h6 class="userEmail">{{currentOffer?.ownerId?.email}}</h6>
-      <a [routerLink]="['/profile',currentOffer?.ownerId?._id]"  ><button  class="profileBtn btn" >Профил</button></a>
-      <button *ngIf="UserService.userId===currentOffer?.ownerId?._id" (click)="redirectToEdit()"  class="editBtn btn" >Редактиране</button>
+      <h1 class="userName">{{ currentOffer?.ownerId?.companyName }}</h1>
+      <h6 class="userEmail">{{ currentOffer?.ownerId?.email }}</h6>
+      <a [routerLink]="['/profile', currentOffer?.ownerId?._id]">
+        <button class="profileBtn btn">Профил</button>
+      </a>
+      <button
+        *ngIf="UserService.userId === currentOffer?.ownerId?._id"
+        (click)="redirectToEdit()"
+        class="editBtn btn"
+      >
+        Редактиране
+      </button>
 
-      <button *ngIf="UserService.userId===currentOffer?.ownerId?._id" (click)="delete(currentOffer._id)" class="deleteBtn btn" >Изтриване</button>
-
+      <button
+        *ngIf="UserService.userId === currentOffer?.ownerId?._id"
+        (click)="delete(currentOffer._id)"
+        class="deleteBtn btn"
+      >
+        Изтриване
+      </button>
     </div>
     <div class="offerDetails">
-      <h2 class="offerName">{{currentOffer?.name}}</h2>
+      <h2 class="offerName">{{ currentOffer?.name }}</h2>
       <div class="details">
-        {{currentOffer?.description}}
+        {{ currentOffer?.description }}
       </div>
       <div class="flexContainer">
-        <button (click)="checkout(currentOffer)" [disabled]="currentOffer?.purchasedBy?.includes(UserService.userId)||currentOffer?.ownerId?._id==UserService.userId" class="buyBtn">Купи</button>
-        <label class="price">{{currentOffer?.price}}$</label>
+        <button
+          (click)="checkout(currentOffer)"
+          [disabled]="
+            currentOffer?.purchasedBy?.includes(UserService.userId) ||
+            currentOffer?.ownerId?._id == UserService.userId
+          "
+          class="buyBtn btn"
+        >
+          Купи
+        </button>
+        <label class="price">{{ currentOffer?.price }}$</label>
       </div>
-
     </div>
   </div>
 </div>
-
