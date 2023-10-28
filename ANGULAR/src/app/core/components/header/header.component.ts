@@ -21,7 +21,7 @@ export class HeaderComponent {
 
   checkPage() {
     const catalog = document.getElementsByClassName('catalog-container');
-    if (catalog) {
+    if (catalog.length !== 0) {
       return true;
     } else {
       return false;
