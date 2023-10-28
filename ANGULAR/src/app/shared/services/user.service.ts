@@ -41,8 +41,7 @@ export class UserService {
     company: string,
     firstName: string,
     lastName: string,
-    userType:string,
-
+    userType: string
   ) {
     this.HttpService.postRequest('api/users/register', {
       email,
@@ -51,14 +50,13 @@ export class UserService {
       company,
       firstName,
       lastName,
-      userType
+      userType,
     }).subscribe(
       (res: any) => {
         this.setToken(res.payload.token);
         this.setUserRole(res.payload.userRole);
         this.setUserId(res.payload.userId);
         this.Router.navigate(['/catalog']);
-
       },
       (error) => {
         this.ToastrService.error(error.error.message, 'Error');

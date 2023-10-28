@@ -43,3 +43,10 @@ img {
 .serviceName {
   padding: 10px 0;
 }
+
+.message {
+  text-align: center;
+  margin-bottom: 10em;
+  font-size: 1.8em;
+  color: white;
+}

@@ -10,6 +10,12 @@
   </div>
 </div>
 
-<div class="message" *ngIf="!CatalogService.businessmenSorted">
-  There are no offers at the moment
+<div
+  class="message"
+  *ngIf="
+    CatalogService.businessmenSorted &&
+    CatalogService.businessmenSorted.length === 0
+  "
+>
+  There are no businessmen at the moment
 </div>
