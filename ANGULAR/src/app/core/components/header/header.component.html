@@ -4,12 +4,35 @@
       <div class="logo"><a routerLink="/home">OffersBg</a></div>
       <div class="search-field">
         <i class="fa-solid fa-magnifying-glass"></i>
-        <input #param (input)="CatalogService.sortBusinessman(param.value)" type="text" />
+        <input
+          #param
+          (input)="CatalogService.sortBusinessman(param.value)"
+          type="text"
+        />
       </div>
-      <div class="authentication">
+      <div class="authentication" *ngIf="UserService.getUserId() === null">
         <li><a routerLink="/login">Sign in</a></li>
         <li><a routerLink="/register">Sign Up</a></li>
       </div>
+      <div class="navigation" *ngIf="UserService.getUserId() !== null">
+        <i class="fa-solid fa-user fa-2x" (click)="changeMenu()"></i>
+        <div *ngIf="menu" class="drop-menu">
+          <div><a routerLink="/catalog">Catalog</a></div>
+          <div><a routerLink="/createOffer">Create</a></div>
+          <div>
+            <a routerLink="/profile/{{ UserService.userId }}">Profile</a>
+          </div>
+          <div><a routerLink="/login">Logout</a></div>
+        </div>
+      </div>
     </ul>
+    <div class="search-field hidden">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input
+        #param
+        (input)="CatalogService.sortBusinessman(param.value)"
+        type="text"
+      />
+    </div>
   </nav>
 </header>

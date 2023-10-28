@@ -56,9 +56,66 @@ li:first-child:hover {
   border: none;
   outline: none;
   background-color: transparent;
+  width: 30em;
 }
 
 a {
   text-decoration: none;
   color: white;
+}
+
+.navigation i {
+  padding: 0.5em;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  position: relative;
+}
+
+.drop-menu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 5.2em;
+  right: 3.7em;
+  background-color: white;
+  border-radius: 0.5em;
+}
+
+.drop-menu div {
+  font-size: 1.2em;
+  padding: 0.3em;
+  color: black;
+}
+
+.drop-menu div a {
+  color: black;
+  text-decoration: none;
+}
+
+.search-field.hidden {
+  display: none;
+}
+
+@media (max-width: 790px) {
+  ul {
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+  }
+
+  .drop-menu {
+    right: 2em;
+  }
+}
+
+@media (max-width: 707px) {
+  .search-field {
+    display: none;
+  }
+
+  .search-field.hidden {
+    display: flex;
+    margin-top: 1em;
+  }
 }
