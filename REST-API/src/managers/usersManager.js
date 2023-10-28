@@ -16,6 +16,13 @@ exports.userProfileInfo=async(id)=>{
 exports.getUserInfo = async (id) => {
   return userModel.findById(id);
 };
+exports.getPurchasedOffers = async (userId) => {
+  return offersModel.find({
+    purchasedBy: {
+      $elemMatch: { $eq: userId }
+    }
+  });
+};
 exports.register = async (
   email,
   companyName,

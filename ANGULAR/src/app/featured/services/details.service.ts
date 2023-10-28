@@ -22,4 +22,7 @@ export class DetailsService {
   getProfile(id:string){
     return this.Http.get(`api/users/userProfileInfo/${id}`)
   }
+  getPurchasedOffers(userId:string){
+    return this.Http.get(`api/users/getPurchasedOffers/${userId}`)
+  }
 }

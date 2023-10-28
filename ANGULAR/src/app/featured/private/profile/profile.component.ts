@@ -27,6 +27,18 @@ constructor(
       this.DetailsService.getProfile(id).subscribe(
         (res:any)=>{
           this.profile = res
+          if(this.profile.userType =="Client"){
+
+            this.DetailsService.getPurchasedOffers(this.profile._id).subscribe(
+              (res)=>{
+                this.profile.offers = res
+              },
+              (error)=>{
+                this.ToastrService.error(error.error.message,"Error")
+
+              }
+            )
+          }
         },
         (error)=>{
           this.ToastrService.error(error.error.message,"Error")
