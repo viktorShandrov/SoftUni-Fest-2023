@@ -1,4 +1,4 @@
-.container {
+.catalog-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,25 +21,25 @@
   border-radius: 1em;
   opacity: 0.6;
   /*padding: 1em;*/
-  cursor: pointer ;
+  cursor: pointer;
   text-align: center;
   transition: 0.3s;
 }
-.businessman:hover{
+.businessman:hover {
   transform: scale(1.05);
 }
 
-img{
+img {
   width: 100%;
   border-top-left-radius: 1em;
   border-top-right-radius: 1em;
 }
 
-.companyName{
+.companyName {
   padding: 5px 0;
   width: 100%;
   background-color: #9a9a9a;
 }
-.serviceName{
+.serviceName {
   padding: 10px 0;
 }

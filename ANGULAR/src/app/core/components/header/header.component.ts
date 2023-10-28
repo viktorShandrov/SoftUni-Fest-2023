@@ -18,4 +18,13 @@ export class HeaderComponent {
   changeMenu() {
     this.menu = !this.menu;
   }
+
+  checkPage() {
+    const catalog = document.getElementsByClassName('catalog-container');
+    if (catalog) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
