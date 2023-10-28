@@ -1,14 +1,20 @@
 <div class="container">
   <div class="user">
     <i class="fa-solid fa-user fa-4x"></i>
-    <div class="name">{{ profile?.companyName ||profile?.firstName }}</div>
-    <span>({{profile?.userType}})</span>
+    <div class="name">{{ profile?.companyName || profile?.firstName }}</div>
+    <span>({{ profile?.userType }})</span>
   </div>
-  <div  class="offers">
-    <a [routerLink]="['/offerDetails',offer._id]" *ngFor="let offer of profile?.offers" class="offer" >
-      <img src="./assets/service.png" alt="">
-      <span class="serviceName">{{offer.name}}</span>
+  <div class="offers" *ngIf="profile?.offers.length > 0">
+    <a
+      [routerLink]="['/offerDetails', offer._id]"
+      *ngFor="let offer of profile?.offers"
+      class="offer"
+    >
+      <img src="./assets/service.png" alt="" />
+      <span class="serviceName">{{ offer.name }}</span>
     </a>
-
+  </div>
+  <div class="message" *ngIf="profile?.offers.length === 0">
+    You have no offers
   </div>
 </div>
