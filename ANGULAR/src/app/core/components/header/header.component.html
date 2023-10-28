@@ -2,7 +2,10 @@
   <nav>
     <ul>
       <div class="logo"><a routerLink="/home">OffersBg</a></div>
-      <div class="search-field" *ngIf="UserService.getUserId() !== null">
+      <div
+        class="search-field"
+        *ngIf="UserService.getUserId() !== null && checkPage() === true"
+      >
         <i class="fa-solid fa-magnifying-glass"></i>
         <input
           #param
@@ -26,7 +29,10 @@
         </div>
       </div>
     </ul>
-    <div class="search-field hidden" *ngIf="UserService.getUserId() !== null">
+    <div
+      class="search-field hidden"
+      *ngIf="UserService.getUserId() !== null && checkPage() === true"
+    >
       <i class="fa-solid fa-magnifying-glass"></i>
       <input
         #param
