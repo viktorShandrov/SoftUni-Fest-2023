@@ -72,6 +72,7 @@ p {
   /*flex-direction: column;*/
   justify-content: space-around;
   gap: 20px;
+  margin-bottom: 3em;
 }
 .other-authBtn {
   padding: 10px 25px;
