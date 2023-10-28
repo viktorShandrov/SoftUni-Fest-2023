@@ -6,7 +6,7 @@ import {UserService} from "../../shared/services/user.service";
   providedIn: 'root'
 })
 export class RouterService {
-  publicRoutes = ["login","register","home"]
+  publicRoutes = ["login","register","home","test"]
   constructor(
     private router: Router,
     private UserService: UserService,
@@ -16,18 +16,14 @@ export class RouterService {
     // Subscribe to the NavigationEnd event
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        // Check if it's the initial navigation
-        if (event.id === 1) {
 
-          console.log("initial load")
-          // Perform your action here
-          this.setUserInfo();
-        }
+        if(!this.publicRoutes.includes(event.url.split("/")[1])){
+          if (event.id === 1) {
 
-
-        console.log(event.url)
-        if(!this.publicRoutes.includes(event.url.split("/")[0])){
-
+            console.log("initial load")
+            // Perform your action here
+            this.setUserInfo();
+          }
           if(!localStorage.getItem("token")){
             this.router.navigate(['/login'])
           }

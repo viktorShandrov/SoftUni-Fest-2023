@@ -5,10 +5,11 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AppRoutingModule } from '../app-routing.module';
 import {RouterService} from "./services/router.service";
+import { TestComponent } from './components/test/test.component';
 
 @NgModule({
   providers:[RouterService],
-  declarations: [HeaderComponent, FooterComponent],
+  declarations: [HeaderComponent, FooterComponent, TestComponent],
   imports: [CommonModule, AppRoutingModule],
   exports: [HeaderComponent, FooterComponent],
 })
