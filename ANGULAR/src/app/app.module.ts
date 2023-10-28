@@ -15,7 +15,6 @@ import { ApiInterceptor } from './core/interceptors/api.interceptor';
 import { TokenInterceptor } from './core/interceptors/token.interceptor';
 import { RouterService } from './core/services/router.service';
 import { NgxStripeModule } from 'ngx-stripe';
-import {NgxEchartsModule} from "ngx-echarts";
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,12 +27,11 @@ import {NgxEchartsModule} from "ngx-echarts";
       timeOut: 3000, // 3 seconds
       closeButton: true,
     }),
-    NgxStripeModule.forRoot('pk_test_51O65tmIWMDM378cGRAgjeJJ5WiGHwP0VCXilUyQMEnDvMBfgxXNvTrEHohOLklESpA8eIqxSr4fLsPXek25fSinj00hBnfbcXY'),
+    NgxStripeModule.forRoot(
+      'pk_test_51O65tmIWMDM378cGRAgjeJJ5WiGHwP0VCXilUyQMEnDvMBfgxXNvTrEHohOLklESpA8eIqxSr4fLsPXek25fSinj00hBnfbcXY'
+    ),
     SharedModule,
     CoreModule,
-    NgxEchartsModule.forRoot({
-      echarts: () => import('echarts')
-    }),
     HttpClientModule,
     FeaturedModule,
     FormsModule,
