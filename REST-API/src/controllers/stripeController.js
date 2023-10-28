@@ -25,8 +25,8 @@ router.post('/create-checkout-session', async (req, res) => {
             },
         ],
         mode: 'payment',
-        success_url: 'http://localhost:3000/successfulPayment',
-        cancel_url: 'http://localhost:3000/unsuccessfulPayment',
+        success_url: 'http://localhost:4200/successfulPayment',
+        cancel_url: 'http://localhost:4200/unsuccessfulPayment',
         metadata: {
             userId,
             offerId
