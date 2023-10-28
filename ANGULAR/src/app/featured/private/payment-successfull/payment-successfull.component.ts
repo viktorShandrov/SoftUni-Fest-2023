@@ -22,7 +22,7 @@ ngAfterViewInit() {
       this.seconds-=1
       if(this.seconds==0){
         clearInterval(interval)
-        this.Router.navigate(["/profile"])
+        this.Router.navigate(["/profile",this.UserService.userId])
       }
     },1000
   )
