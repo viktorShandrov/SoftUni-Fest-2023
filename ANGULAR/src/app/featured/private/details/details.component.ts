@@ -47,7 +47,7 @@ export class DetailsComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe((params: any) => {
       const id = params['id']; // 'id' should match the parameter name in your route configuration
-      console.log("offer id", id)
+      console.log('offer id', id);
       this.DetailsService.getOffer(id).subscribe(
         (res: any) => {
           this.currentOffer = res.offer;
@@ -59,17 +59,13 @@ export class DetailsComponent implements OnInit {
     });
   }
 
-<<<<<<< Updated upstream
-
-  checkout(currentOffer:any) {
-    // Check the server.js tab to see an example implementation
-    this.http.post('api/stripe/create-checkout-session', {name:currentOffer.name,price:currentOffer.price})
-=======
-  checkout() {
+  checkout(currentOffer: any) {
     // Check the server.js tab to see an example implementation
     this.http
-      .post('api/stripe/create-checkout-session', {})
->>>>>>> Stashed changes
+      .post('api/stripe/create-checkout-session', {
+        name: currentOffer.name,
+        price: currentOffer.price,
+      })
       .pipe(
         switchMap((session: any) => {
           return this.stripeService.redirectToCheckout({
