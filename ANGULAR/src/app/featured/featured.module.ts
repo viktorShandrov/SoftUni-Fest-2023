@@ -11,6 +11,8 @@ import { RegisterComponent } from './public/register/register.component';
 import { CoreModule } from '../core/core.module';
 import { RouterService } from '../core/services/router.service';
 import { AppRoutingModule } from '../app-routing.module';
+import { PaymentSuccessfullComponent } from './private/payment-successfull/payment-successfull.component';
+import { PaymentUnsuccessfullComponent } from './private/payment-unsuccessfull/payment-unsuccessfull.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { AppRoutingModule } from '../app-routing.module';
     CatalogComponent,
     DetailsComponent,
     RegisterComponent,
+    PaymentSuccessfullComponent,
+    PaymentUnsuccessfullComponent,
   ],
   imports: [CommonModule, FormsModule, CoreModule, AppRoutingModule],
   providers: [RouterService],
