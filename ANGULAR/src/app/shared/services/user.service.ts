@@ -81,7 +81,6 @@ export class UserService {
   }
 
   getUserId() {
-    console.log(localStorage.getItem('userId'));
     return localStorage.getItem('userId');
   }
 

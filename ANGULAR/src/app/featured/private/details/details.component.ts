@@ -37,7 +37,7 @@ export class DetailsComponent implements OnInit {
     this.DetailsService.delete(id).subscribe(
       (res) => {
         this.ToastrService.success('Successfully deleted', 'Happy message');
-        this.Router.navigate(['/profile']);
+        this.Router.navigate(['/profile',this.UserService.userId]);
       },
       (error) => {
         this.ToastrService.error(error.message, 'Error');
@@ -65,6 +65,8 @@ export class DetailsComponent implements OnInit {
       .post('api/stripe/create-checkout-session', {
         name: currentOffer.name,
         price: currentOffer.price,
+        offerId:this.currentOffer._id,
+        userId:this.UserService.userId
       })
       .pipe(
         switchMap((session: any) => {

@@ -7,7 +7,7 @@ const router = express.Router();
 router.use(express.urlencoded({ extended: true }));
 router.use(express.json());
 router.post('/create-checkout-session', async (req, res) => {
-    let {name,price,id} = req.body
+    let {name,price,offerId,userId} = req.body
 
 
     const session = await stripe.checkout.sessions.create({
@@ -25,11 +25,12 @@ router.post('/create-checkout-session', async (req, res) => {
             },
         ],
         mode: 'payment',
-        metadata: {
-            productId: id, // Include the product ID here
-        },
         success_url: 'https://example.com/success',
         cancel_url: 'https://example.com/cancel',
+        metadata: {
+            userId,
+            offerId
+        },
     });
 
     res.json({ id: session.id });
@@ -39,20 +40,15 @@ router.post('/create-checkout-session', async (req, res) => {
 router.post("/paymentMade",(req,res)=>{
 
     try {
-        // const sig = req.headers['stripe-signature'];
-        // const event = stripe.webhooks.constructEvent(req.body, sig, "sk_test_51O65tmIWMDM378cGSVN4s2gEzeq6ARLUMgKvRItqGyk7VoBYf1egHR7ES7N24oo0bwwasiclhr1scnL2ls7mVH7T00d2ZdIxch");
-        // console.log(req)
-        const {type} = req.body
-        console.log(req.body)
-        console.log(type)
-        if (type === 'payment_intent.succeeded') {
-            // This is a successful payment event
-            console.log("---------------------------------------------------------------------------")
-            // Access event.data.object to get payment details
-            const paymentIntent = event.data.object;
-            console.log(paymentIntent)
 
-            // Implement your logic for handling successful payments here
+        const {type,data} = req.body
+
+        if (type === 'checkout.session.completed') {
+
+
+            const {userId,offerId} = data.object.metadata
+
+            offerManager.addOfferToPurchasedOffers(userId,offerId)
         }
 
         res.status(200).send('Webhook Received');
