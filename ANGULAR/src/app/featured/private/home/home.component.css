@@ -31,17 +31,17 @@
 }
 
 .hero .heading p {
-  font-size: 1.5em;
+  font-size: 1.6em;
 }
 
-.reviews{
+.reviews {
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
   padding: 40px;
   justify-content: center;
 }
-.reviewC{
+.reviewC {
   background-color: white;
   border-radius: 20px;
   display: flex;
@@ -49,31 +49,38 @@
   padding: 20px;
   width: 300px;
 }
-.name{
+.name {
   text-align: center;
 }
-.reviewerImage{
+.reviewerImage {
   border-radius: 100px;
   width: 100px;
   height: 100px;
 }
-.starsC{
+.starsC {
   border-radius: 20px;
   justify-content: space-around;
   padding: 10px;
-  background-color: #FFAEAE;
+  background-color: #ffaeae;
   display: flex;
-  gap:5px ;
+  gap: 5px;
 }
-.fa-star{
+.fa-star {
   color: yellow;
 }
-.comment{
+.comment {
   font-weight: initial;
   font-size: 14px;
   padding: 5px;
+  margin-top: 0.8em;
 }
 
+.reviews-heading {
+  text-align: center;
+  color: white;
+  margin-top: 1em;
+  font-size: 2.7em;
+}
 .animate {
   opacity: 0;
   transition: opacity 3s ease;
@@ -94,4 +101,3 @@
     background-position: center;
   }
 }
-
