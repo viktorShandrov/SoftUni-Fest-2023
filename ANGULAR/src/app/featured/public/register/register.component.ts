@@ -16,13 +16,16 @@ export class RegisterComponent {
 
   onRegisterSubmit(form: any) {
     console.log(form.form.value);
+      this.UserService.register(
+        form.form.value.email,
+        form.form.value.password,
+        form.form.value.repeatedPassword,
+        form.form.value.company,
+        form.form.value.firstName,
+        form.form.value.lastName,
+        form.form.value.selectUserType,
+      );
 
-    this.UserService.register(
-      form.form.value.email,
-      form.form.value.password,
-      form.form.value.repeatedPassword,
-      form.form.value.company
-    );
-    this.Router.navigate(['/catalog']);
+
   }
 }

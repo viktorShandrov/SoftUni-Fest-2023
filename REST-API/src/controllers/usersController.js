@@ -22,7 +22,7 @@ router.post("/login",async (req, res) => {
 router.post("/register", async (req, res) => {
     try {
         const {email,companyName,firstName,lastName,password,repeatedPassword,userType} = req.body
-
+        console.log(req.body)
         const payload = await usersManager.register(email,companyName,password,repeatedPassword,userType,lastName,firstName)
 
     res.status(200).json({message:"Successfully registered", payload })
@@ -52,6 +52,20 @@ router.get("/userProfileInfo/:id",isAuth, async (req, res) => {
         const user = await usersManager.userProfileInfo(id)
 
     res.status(200).json(user)
+    } catch (error) {
+        console.log(error)
+        res.status(400).json({message:error.message})
+    }
+
+});
+router.get("/getPurchasedOffers/:id",isAuth, async (req, res) => {
+    try {
+        const {id} = req.params
+
+        const offers = await usersManager.getPurchasedOffers(id)
+        console.log(11)
+
+    res.status(200).json(offers)
     } catch (error) {
         console.log(error)
         res.status(400).json({message:error.message})

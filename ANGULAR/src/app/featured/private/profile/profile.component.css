@@ -51,7 +51,9 @@
 .offer:hover{
   transform: scale(1.05);
 }
-
+a{
+  text-decoration: none;
+}
 img{
   width: 100%;
   border-top-left-radius: 1em;

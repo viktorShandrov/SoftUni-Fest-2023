@@ -4,11 +4,11 @@
     <div class="name">{{ profile?.companyName ||profile?.firstName }}</div>
     <span>({{profile?.userType}})</span>
   </div>
-
   <div  class="offers">
     <a [routerLink]="['/offerDetails',offer._id]" *ngFor="let offer of profile?.offers" class="offer" >
       <img src="./assets/service.png" alt="">
       <span class="serviceName">{{offer.name}}</span>
     </a>
+
   </div>
 </div>
