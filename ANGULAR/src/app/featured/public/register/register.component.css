@@ -10,7 +10,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 15em;
+  align-items: center;
+  width: 50em;
 }
 
 .right {
@@ -31,7 +32,7 @@ form {
 }
 
 .right img {
-  width: 35em;
+  width: 34em;
   margin-bottom: 2em;
 }
 
@@ -121,4 +122,14 @@ select {
 
 form p:last-child {
   font-size: 1.2em;
+}
+
+@media (max-width: 1280px) {
+  .right img {
+    width: 24em;
+  }
+
+  .left {
+    width: 40em;
+  }
 }
