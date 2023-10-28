@@ -1,6 +1,7 @@
 
 const utils = require("../utils/utils");
 const userModel = require("../models/userModel");
+const offersModel = require("../models/offersModel");
 const bcrypt = require("bcrypt");
 exports.getUserInfo=async(id)=>{
   return userModel.findById(id)

@@ -1,11 +1,13 @@
 const express = require("express");
 const usersManager = require("../managers/usersManager");
 const offerManager = require("../managers/offerManager");
+const {isAuth} = require("../utils/auth");
 
 const router = express.Router();
+router.use(express.urlencoded({ extended: true }));
+router.use(express.json());
 
-
-router.get("/offer/:id", async (req, res) => {
+router.get("/offer/:id",isAuth, async (req, res) => {
     try {
         const {id} = req.params
         const {_id} = req.user

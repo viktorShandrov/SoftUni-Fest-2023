@@ -5,8 +5,7 @@ const mainRouter = require("../mainRouter.js")
 
 
 exports.expressConfig = (server) => {
-  server.use(express.urlencoded({ extended: true }));
-  server.use(express.json());
+
 
   const corsMiddleware = (req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "http://localhost:4200");

@@ -62,12 +62,11 @@ export class UserService {
     this.HttpService.getRequest("api/users/userInfo").subscribe(
       (res:any)=>{
         const {email,_id,userType} = res
-        console.log("uswer",res)
         this.setUserRole(userType)
         this.setUserId(_id)
       },
       (error)=>{
-        this.ToastrService.error(error.message,"Error")
+        this.ToastrService.error(error.error,"Error")
       }
     )
   }

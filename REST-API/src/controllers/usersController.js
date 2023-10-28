@@ -4,7 +4,8 @@ const {isAuth} = require("../utils/auth");
 const offerManager = require("../managers/offerManager");
 
 const router = express.Router();
-
+router.use(express.urlencoded({ extended: true }));
+router.use(express.json());
 router.post("/login",async (req, res) => {
     try {
             const {email,password} = req.body

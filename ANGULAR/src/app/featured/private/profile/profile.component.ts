@@ -29,7 +29,7 @@ constructor(
           this.profile = res
         },
         (error)=>{
-          this.ToastrService.error(error.message,"Error")
+          this.ToastrService.error(error.error.message,"Error")
         }
       )
     });
