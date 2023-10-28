@@ -1,7 +1,6 @@
-<div class="container">
-  <div *ngFor="let businessman of businessmen" class="businessman">
+<div class="container" >
+  <div (click)="showProfile(businessman._id)" *ngFor="let businessman of CatalogService.businessmenSorted" class="businessman" [attr.userId]="businessman._id">
     <img src="./assets/service.png" alt="">
-<!--    <span class="companyName">Company</span>-->
-    <span class="serviceName">Company</span>
+    <span class="serviceName">{{businessman.companyName}}</span>
   </div>
 </div>

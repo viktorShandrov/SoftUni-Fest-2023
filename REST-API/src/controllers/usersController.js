@@ -44,6 +44,19 @@ router.get("/userInfo",isAuth, async (req, res) => {
     }
 
 });
+router.get("/userProfileInfo/:id",isAuth, async (req, res) => {
+    try {
+        const {id} = req.params
+
+        const user = await usersManager.userProfileInfo(id)
+
+    res.status(200).json(user)
+    } catch (error) {
+        console.log(error)
+        res.status(400).json({message:error.message})
+    }
+
+});
 
 router.get("/getAllBusinessman", async (req, res) => {
     try{

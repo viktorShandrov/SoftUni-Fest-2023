@@ -17,4 +17,9 @@ export class DetailsService {
   getOffer(id:string){
     return this.Http.get(`api/items/offer/${id}`)
   }
+
+
+  getProfile(id:string){
+    return this.Http.get(`api/users/userProfileInfo/${id}`)
+  }
 }

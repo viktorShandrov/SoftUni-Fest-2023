@@ -12,12 +12,14 @@ export class RouterService {
     private UserService: UserService,
 
   ) {
-    console.log(1)
+
     // Subscribe to the NavigationEnd event
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         // Check if it's the initial navigation
         if (event.id === 1) {
+
+          console.log("initial load")
           // Perform your action here
           this.setUserInfo();
         }
@@ -25,7 +27,7 @@ export class RouterService {
     });
   }
   log(){
-    console.log(22)
+    console.log(null)
   }
 
   private setUserInfo() {

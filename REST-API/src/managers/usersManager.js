@@ -1,9 +1,17 @@
 const utils = require("../utils/utils")
 const userModel = require("../models/userModel")
+const offersModel = require("../models/offersModel")
 const bcrypt = require("bcrypt")
 
 exports.getUserInfo=async(id)=>{
     return userModel.findById(id)
+}
+exports.userProfileInfo=async(id)=>{
+    let user = await  userModel.findById(id)
+     user = user.toObject({ getters: true, virtuals: true });
+    const userOffers = await offersModel.find({ownerId:user._id})
+    user.offers = userOffers
+    return user
 }
 exports.register = async (email,companyName,password,repeatedPassword,userType,lastName,firstName) =>{
 

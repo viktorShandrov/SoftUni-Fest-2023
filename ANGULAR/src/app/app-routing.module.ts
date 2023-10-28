@@ -30,7 +30,7 @@ const routes: Routes = [
     component: CatalogComponent,
   },
   {
-    path: 'profile',
+    path: 'profile/:id',
     pathMatch: 'full',
     component: ProfileComponent,
   },

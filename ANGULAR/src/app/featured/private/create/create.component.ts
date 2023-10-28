@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {CreateService} from "../../services/create.service";
 import {ToastrService} from "ngx-toastr";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-create',
@@ -13,6 +13,7 @@ export class CreateComponent {
   constructor(
     public CreateService:CreateService,
     private ToastrService:ToastrService,
+    private Router:Router,
     private route: ActivatedRoute
   ) {
     this.route.queryParams.subscribe((params:any) => {
@@ -35,8 +36,10 @@ export class CreateComponent {
       form.value.description,
       form.value.price,
     ).subscribe(
-      (res)=>{
-        console.log(res)
+      (res:any)=>{
+        this.Router.navigate(["/offerDetails",res.offer._id])
+        this.ToastrService.success("Successfully created", "Happy message")
+
       },
       (error) => {
         this.ToastrService.error(error.message, "Error")

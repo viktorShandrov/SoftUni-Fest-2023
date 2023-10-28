@@ -4,10 +4,10 @@
       <i class="fa-solid fa-user picture"></i>
       <h1 class="userName">{{currentOffer.ownerId?.companyName}}</h1>
       <h6 class="userEmail">{{currentOffer.ownerId?.email}}</h6>
-      <button  class="profileBtn btn" >Профил</button>
-      <button (click)="redirectToEdit()" *ngIf="UserService.userId===currentOffer.ownerId?._id" class="editBtn btn" >Редактиране</button>
+      <a [routerLink]="['/profile',currentOffer.ownerId?._id]"  ><button  class="profileBtn btn" >Профил</button></a>
+      <button *ngIf="UserService.userId===currentOffer.ownerId?._id" (click)="redirectToEdit()"  class="editBtn btn" >Редактиране</button>
 
-      <button (click)="delete(currentOffer._id)" class="deleteBtn btn" >Изтриване</button>
+      <button *ngIf="UserService.userId===currentOffer.ownerId?._id" (click)="delete(currentOffer._id)" class="deleteBtn btn" >Изтриване</button>
 
     </div>
     <div class="offerDetails">
@@ -16,7 +16,7 @@
         {{currentOffer.description}}
       </div>
       <div class="flexContainer">
-        <button class="buyBtn">Купи</button>
+        <button (click)="checkout()" class="buyBtn">Купи</button>
         <label class="price">{{currentOffer.price}}$</label>
       </div>
 

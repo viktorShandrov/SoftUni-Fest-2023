@@ -4,7 +4,7 @@
       <div class="logo"><a routerLink="/home">OffersBg</a></div>
       <div class="search-field">
         <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" />
+        <input #param (input)="CatalogService.sortBusinessman(param.value)" type="text" />
       </div>
       <div class="authentication">
         <li><a routerLink="/login">Sign in</a></li>

@@ -14,6 +14,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { ApiInterceptor } from './core/interceptors/api.interceptor';
 import { TokenInterceptor } from './core/interceptors/token.interceptor';
 import { RouterService } from './core/services/router.service';
+import { NgxStripeModule } from 'ngx-stripe';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,6 +27,7 @@ import { RouterService } from './core/services/router.service';
       timeOut: 3000, // 3 seconds
       closeButton: true,
     }),
+    NgxStripeModule.forRoot('pk_test_51O65tmIWMDM378cGRAgjeJJ5WiGHwP0VCXilUyQMEnDvMBfgxXNvTrEHohOLklESpA8eIqxSr4fLsPXek25fSinj00hBnfbcXY'),
     SharedModule,
     CoreModule,
     HttpClientModule,
