@@ -45,7 +45,12 @@
   color: white;
 }
 
-
+button{
+  cursor: pointer;
+}
+button:disabled{
+  cursor: not-allowed;
+}
 .editBtn{
   background-color: #47ff71;
 

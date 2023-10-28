@@ -34,6 +34,13 @@ exports.deleteOffer = async(id,userId)=>{
 
     return OfferModel.findByIdAndDelete(id)
 }
+
+
+exports.addOfferToPurchasedOffers=async(userId,offerID)=>{
+    const offer = await OfferModel.findById(offerID)
+    offer.purchasedBy.push(userId)
+    return offer.save()
+}
 exports.searchBusinessman = async(searchParam)=>{
 
     return userModel.find({

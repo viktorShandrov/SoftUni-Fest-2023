@@ -16,7 +16,7 @@
         {{currentOffer?.description}}
       </div>
       <div class="flexContainer">
-        <button (click)="checkout(currentOffer)" class="buyBtn">Купи</button>
+        <button (click)="checkout(currentOffer)" [disabled]="currentOffer?.purchasedBy?.includes(UserService.userId)||currentOffer?.ownerId?._id==UserService.userId" class="buyBtn">Купи</button>
         <label class="price">{{currentOffer?.price}}$</label>
       </div>
 
