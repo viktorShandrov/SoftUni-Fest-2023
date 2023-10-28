@@ -1,18 +1,7 @@
-@media (max-width: 710px) {
-  footer {
-    flex-direction: column;
-    gap: 2em;
-  }
-
-  section {
-    margin: 0 auto;
-  }
-}
-
 footer {
   display: flex;
   justify-content: space-around;
-  padding: 1.5em;
+  padding: 2.6em;
   color: white;
   background-color: rgb(80, 80, 80);
 }
@@ -31,4 +20,21 @@ footer {
 
 p {
   font-size: 1.2em;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+}
+
+@media (max-width: 710px) {
+  footer {
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  section {
+    margin: 0 auto;
+  }
 }

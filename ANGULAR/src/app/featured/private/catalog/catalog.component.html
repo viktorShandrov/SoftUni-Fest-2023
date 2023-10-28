@@ -1,6 +1,15 @@
-<div class="catalog-container" >
-  <div (click)="showProfile(businessman._id)" *ngFor="let businessman of CatalogService.businessmenSorted" class="businessman" [attr.userId]="businessman._id">
-    <img src="./assets/service.png" alt="">
-    <span class="serviceName">{{businessman.companyName}}</span>
+<div class="catalog-container" *ngIf="CatalogService.businessmenSorted">
+  <div
+    (click)="showProfile(businessman._id)"
+    *ngFor="let businessman of CatalogService.businessmenSorted"
+    class="businessman"
+    [attr.userId]="businessman._id"
+  >
+    <img src="./assets/service.png" alt="" />
+    <span class="serviceName">{{ businessman.companyName }}</span>
   </div>
+</div>
+
+<div class="message" *ngIf="!CatalogService.businessmenSorted">
+  There are no offers at the moment
 </div>
