@@ -9,6 +9,7 @@ import { RegisterComponent } from './featured/public/register/register.component
 import { PaymentSuccessfullComponent } from './featured/private/payment-successfull/payment-successfull.component';
 import { PaymentUnsuccessfullComponent } from './featured/private/payment-unsuccessfull/payment-unsuccessfull.component';
 import { HomeComponent } from './featured/private/home/home.component';
+import {TestComponent} from "./core/components/test/test.component";
 
 const routes: Routes = [
   {
@@ -60,6 +61,11 @@ const routes: Routes = [
     path: 'home',
     pathMatch: 'full',
     component: HomeComponent,
+  },
+  {
+    path: 'test',
+    pathMatch: 'full',
+    component: TestComponent,
   },
 ];
 
