@@ -4,9 +4,9 @@ const OfferModel = require("../models/offersModel")
 const userModel = require("../models/userModel");
 
 
-exports.createOffer = async(name,description,price,ownerId)=>{
+exports.createOffer = async(name,description,price,ownerId,type)=>{
 
-    return  OfferModel.create({name,description,price,ownerId})
+    return  OfferModel.create({name,description,price,ownerId,type})
 
 }
 exports.getOffer = async(offerId)=>{

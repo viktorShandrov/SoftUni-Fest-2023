@@ -19,6 +19,10 @@ const schema = new mongoose.Schema({
         type:String,
         required:[true,"price is required"],
     },
+    type:{
+        type:String,
+        required:[true,"offer type is required"],
+    },
     purchasedBy: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "User"

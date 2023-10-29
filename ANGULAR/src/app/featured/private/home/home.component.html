@@ -60,6 +60,16 @@
       </div>
     </div>
   </section>
-  <section class=""></section>
+  <section class="">
+    <canvas baseChart
+            [type]="'pie'"
+            [datasets]="pieChartDatasets"
+            [labels]="pieChartLabels"
+            [options]="pieChartOptions"
+            [plugins]="pieChartPlugins"
+            [legend]="pieChartLegend">
+    </canvas>
+
+  </section>
   <section class="get-started"></section>
 </div>

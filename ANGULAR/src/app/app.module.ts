@@ -15,11 +15,12 @@ import { ApiInterceptor } from './core/interceptors/api.interceptor';
 import { TokenInterceptor } from './core/interceptors/token.interceptor';
 import { RouterService } from './core/services/router.service';
 import { NgxStripeModule } from 'ngx-stripe';
-
+import { NgChartsModule } from 'ng2-charts';
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    NgChartsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot({
