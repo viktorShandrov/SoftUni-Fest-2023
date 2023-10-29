@@ -19,6 +19,19 @@ constructor(
 ) {
 }
   profile!:any
+
+  picPaths=[
+    "/assets/service.png",
+    "./assets/service1.jpg",
+    "./assets/service2.jpg",
+    "./assets/service3.jpg",
+    "./assets/service4.jpg",
+    "./assets/service5.jpg",
+  ]
+
+  randomNum(){
+    return Math.floor(Math.random() * 6)
+  }
   ngOnInit() {
 
 

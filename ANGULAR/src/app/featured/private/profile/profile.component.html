@@ -10,7 +10,7 @@
       *ngFor="let offer of profile?.offers"
       class="offer"
     >
-      <img src="./assets/service.png" alt="" />
+      <img [src]="picPaths[randomNum()]" alt="" />
       <span class="serviceName">{{ offer.name }}</span>
     </a>
   </div>

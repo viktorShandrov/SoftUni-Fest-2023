@@ -5,7 +5,8 @@
     class="businessman"
     [attr.userId]="businessman._id"
   >
-    <img src="./assets/service.png" alt="" />
+    <img [src]="picPaths[randomNum()]" alt="" />
+
     <span class="serviceName">{{ businessman.companyName }}</span>
   </div>
 </div>

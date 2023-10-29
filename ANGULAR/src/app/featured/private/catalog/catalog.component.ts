@@ -10,12 +10,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./catalog.component.css'],
 })
 export class CatalogComponent implements AfterViewInit {
+  picPaths=[
+    "/assets/service.png",
+    "./assets/service1.jpg",
+    "./assets/service2.jpg",
+    "./assets/service3.jpg",
+    "./assets/service4.jpg",
+    "./assets/service5.jpg",
+  ]
   constructor(
     private HttpService: HttpService,
     private ToastrService: ToastrService,
     private Router: Router,
     public CatalogService: CatalogService
   ) {}
+  randomNum(){
+    return Math.floor(Math.random() * 6)
+  }
   ngAfterViewInit() {
     this.HttpService.getRequest('api/users/getAllBusinessman').subscribe(
       (res: any) => {
