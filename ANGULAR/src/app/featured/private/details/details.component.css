@@ -31,6 +31,7 @@
 .userEmail {
   font-size: 18px;
   color: #777;
+  margin-bottom: 2em;
 }
 
 .btn {
@@ -46,55 +47,64 @@
   letter-spacing: 1px;
 }
 
+button:disabled {
+  opacity: 60%;
+  cursor: not-allowed;
+}
+
 .profileBtn {
   background: #6c5ce7;
   color: #fff;
 }
 
-profileBtn:hover {
+.profileBtn:hover {
   background: #4b3da9;
 }
 
-editBtn {
+.editBtn {
   background: #49c25a;
   color: #fff;
 }
 
-editBtn:hover {
+.editBtn:hover {
   background: #37a046;
 }
 
-deleteBtn {
+.deleteBtn {
   background: #e74c3c;
   color: #fff;
 }
 
-deleteBtn:hover {
+.deleteBtn:hover {
   background: #c0372c;
 }
 
 .offerDetails {
   flex: 2;
-  padding: 20px; /* Increased space for offer details */
-  background: #f0f0f0; /* Match container background */
+  padding: 20px;
+  background: #f0f0f0;
   border-radius: 15px;
   margin: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
 }
 
-offerName {
+.offerName {
   font-size: 32px;
   text-align: center;
-  background: #6c5ce7; /* Light purple background for offer name */
+  background: #6c5ce7;
   color: #fff;
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
+  margin-bottom: 0.5em;
 }
 
-details {
+.details {
   background: #fff;
   border-radius: 10px;
-  padding: 20px; /* Increased space for offer details */
+  padding: 20px;
   font-size: 20px;
   color: #333;
   margin: 10px;
@@ -113,7 +123,6 @@ details {
   margin: 0;
 }
 
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .profile {
     flex-direction: column;
