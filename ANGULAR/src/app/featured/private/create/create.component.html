@@ -1,5 +1,12 @@
-<form #form='ngForm' >
-  <select #typeInput='ngModel' [(ngModel)]="CreateService.offer.type" name="type" id="type">
+<form #form="ngForm" (ngSubmit)="submit(form)">
+  <h1>Create you offering</h1>
+  <label for="nameInput">Тип на оферта</label>
+  <select
+    #typeInput="ngModel"
+    [(ngModel)]="CreateService.offer.type"
+    name="type"
+    id="type"
+  >
     <option value="" selected disabled>Choose offer type</option>
     <option value="Job Postings">Job Postings</option>
     <option value="Product Discounts">Product Discounts</option>
@@ -12,17 +19,48 @@
     <option value="Commercial Leases">Commercial Leases</option>
   </select>
   <label for="nameInput">Име на оферта</label>
-  <input id="nameInput" required [(ngModel)]="CreateService.offer.name" type="text" name="name" #nameInput='ngModel' placeholder="Име на оферта...">
+  <input
+    id="nameInput"
+    required
+    [(ngModel)]="CreateService.offer.name"
+    type="text"
+    name="name"
+    #nameInput="ngModel"
+    placeholder="Име на оферта..."
+    minlength="3"
+  />
 
-  <label for="nameInput" >Описание</label>
-  <textarea id="descriptionInput" required [(ngModel)]="CreateService.offer.description" name="description"  #descriptionInput='ngModel' placeholder="Описание..."></textarea>
+  <label for="descriptionInput">Описание</label>
+  <textarea
+    id="descriptionInput"
+    required
+    [(ngModel)]="CreateService.offer.description"
+    name="description"
+    #descriptionInput="ngModel"
+    placeholder="Описание..."
+    minlength="10"
+  ></textarea>
 
-    <label for="priceInput">Цена</label>
+  <label for="priceInput">Цена</label>
 
-    <input id="priceInput" required [(ngModel)]="CreateService.offer.price" name="price" type="number" #priceInput='ngModel' placeholder="Цена на оферта...">
+  <input
+    id="priceInput"
+    required
+    [(ngModel)]="CreateService.offer.price"
+    name="price"
+    type="number"
+    #priceInput="ngModel"
+    placeholder="Цена на оферта..."
+    min="0"
+  />
 
-  <button (click)="submit(form)" *ngIf="!editMode"type="submit">Създай</button>
+  <div *ngIf="form.invalid" class="error-message">
+    Please fill in all required fields and ensure the name is at least 3
+    characters, description at least 10 characters, and the price is not
+    negative.
+  </div>
 
+  <button *ngIf="!editMode" type="submit">Създай</button>
 
-  <button (click)="editOffer(CreateService.offer)" *ngIf="editMode" type="submit">Редактирай</button>
+  <button *ngIf="editMode" type="submit">Редактирай</button>
 </form>

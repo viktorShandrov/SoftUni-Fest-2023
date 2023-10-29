@@ -1,36 +1,67 @@
-form{
-  padding: 40px;
+form {
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  width: 300px;
-  align-items: center;
+  gap: 0.5em;
+  width: 400px;
   margin: 0 auto;
-  border-radius: 40px;
-  background-color: white;
-}
-input,
-textarea{
   border-radius: 10px;
-  padding:10px;
-  border: none;
+  background-color: #f2f2f2;
+  margin-bottom: 2em;
+  margin-top: 2em;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 0.4em;
+}
+
+select {
+  border: 2px solid #737ed4;
+  border-radius: 5px;
+  padding: 15px;
   outline: none;
-  color: white;
-  background-color: #737ed4;
+  background-color: #f2f2f2;
+  color: #737ed4;
 }
+
+input,
+textarea {
+  border: 2px solid #737ed4;
+  border-radius: 5px;
+  padding: 15px;
+  outline: none;
+  color: #737ed4;
+  background-color: #f2f2f2;
+  margin: 10px 0;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
 input::placeholder,
-textarea::placeholder{
-  color: white;
+textarea::placeholder {
+  color: #737ed4;
 }
 
-
-button{
-  padding: 10px 15px;
-  border-radius: 40px;
+button {
+  padding: 15px 20px;
+  border-radius: 10px;
   margin-top: 20px;
   background-color: #ffa40e;
-
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
 }
 
-label{
+button:hover {
+  background-color: #ff7e00;
+}
+
+label {
   margin: 10px 0;
+}
+
+.error-message {
+  color: rgb(245, 111, 111);
 }
