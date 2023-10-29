@@ -35,6 +35,7 @@ export class CreateComponent {
       form.value.name,
       form.value.description,
       form.value.price,
+      form.value.type,
     ).subscribe(
       (res:any)=>{
         this.Router.navigate(["/offerDetails",res.offer._id])
@@ -42,7 +43,7 @@ export class CreateComponent {
 
       },
       (error) => {
-        this.ToastrService.error(error.message, "Error")
+        this.ToastrService.error(error.error.message, "Error")
       }
     )
   }

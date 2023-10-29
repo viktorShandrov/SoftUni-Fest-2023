@@ -18,11 +18,13 @@ export class CreateService {
     name: '',
     description: '',
     price: '',
-    _id:''
+    _id:'',
+    type:'',
+
   };
 
-  createOffer(name:string,description:string,price:string){
-    return this.HttpClient.post("api/items/createOffer",{name,description,price})
+  createOffer(name:string,description:string,price:string,type:string){
+    return this.HttpClient.post("api/items/createOffer",{name,description,price,type})
   }
   editOffer(offer:any){
     this.HttpClient.post("api/items/editOffer",offer).subscribe(

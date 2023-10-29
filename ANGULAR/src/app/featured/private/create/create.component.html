@@ -1,4 +1,16 @@
 <form #form='ngForm' >
+  <select #typeInput='ngModel' [(ngModel)]="CreateService.offer.type" name="type" id="type">
+    <option value="" selected disabled>Choose offer type</option>
+    <option value="Job Postings">Job Postings</option>
+    <option value="Product Discounts">Product Discounts</option>
+    <option value="Business Services">Business Services</option>
+    <option value="Real Estate Listings">Real Estate Listings</option>
+    <option value="Franchise Opportunities">Franchise Opportunities</option>
+    <option value="Investment Opportunities">Investment Opportunities</option>
+    <option value="Equipment Sales">Equipment Sales</option>
+    <option value="Partnership Opportunities">Partnership Opportunities</option>
+    <option value="Commercial Leases">Commercial Leases</option>
+  </select>
   <label for="nameInput">Име на оферта</label>
   <input id="nameInput" required [(ngModel)]="CreateService.offer.name" type="text" name="name" #nameInput='ngModel' placeholder="Име на оферта...">
 
