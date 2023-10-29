@@ -22,11 +22,11 @@ constructor(
 
   picPaths=[
     "/assets/service.png",
-    "./assets/service1.jpg",
-    "./assets/service2.jpg",
-    "./assets/service3.jpg",
-    "./assets/service4.jpg",
-    "./assets/service5.jpg",
+    "./assets/service1.png",
+    "./assets/service2.png",
+    "./assets/service3.png",
+    "./assets/service4.png",
+    "./assets/service5.png",
   ]
 
   randomNum(){

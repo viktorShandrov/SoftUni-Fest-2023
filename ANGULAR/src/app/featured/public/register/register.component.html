@@ -11,6 +11,7 @@
         name="selectUserType"
         id="selectUserType"
         ngModel=""
+        required
       >
         <option value="" selected disabled>Choose your type</option>
         <option value="Businessman">Businessman</option>
@@ -26,6 +27,9 @@
           ngModel
           name="firstName"
           placeholder="First Name"
+          minlength="3"
+          required
+        />
         />
       </div>
       <div class="inputC">
@@ -33,17 +37,19 @@
         <input
           type="text"
           required
-          #lstNameInput="ngModel"
+          #lastNameInput="ngModel"
           ngModel
           name="lastName"
           placeholder="Last Name"
+          minlength="3"
         />
       </div>
       <div class="inputC">
         <i class="fa-regular fa-envelope"></i>
         <input
-          type="text"
+          type="email"
           required
+          pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
           #emailInput="ngModel"
           ngModel
           name="email"
@@ -60,6 +66,7 @@
           name="company"
           placeholder="Company"
         />
+        />
       </div>
       <div class="inputC">
         <i class="fa-solid fa-key"></i>
@@ -70,6 +77,8 @@
           ngModel
           name="password"
           placeholder="Password"
+          minlength="6"
+        />
         />
       </div>
       <div class="inputC">
@@ -81,6 +90,8 @@
           ngModel
           name="repeatedPassword"
           placeholder="Confirm Password"
+          minlength="6"
+        />
         />
       </div>
       <div class="rememberMeC">
@@ -93,9 +104,9 @@
         <div>Accept <span class="accept">terms and conditions</span></div>
       </div>
 
-      <button class="submit-btn" type="submit">LOG IN</button>
+      <button class="submit-btn" type="submit">REGISTER</button>
       <p>
-        You have account?
+        You have an account?
         <a routerLink="/login" class="login-link">Sign in</a>
       </p>
     </form>
