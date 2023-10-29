@@ -49,3 +49,23 @@ exports.searchBusinessman = async(searchParam)=>{
 
 
 }
+exports.getTopOfferCategories = async()=>{
+
+    const offers = await OfferModel.find()
+    const tierList= {}
+
+    for (const offer of offers) {
+        if(tierList.hasOwnProperty(offer.type)){
+            tierList[offer.type]+=1
+        }else{
+            tierList[offer.type]=1
+        }
+    }
+
+    const sorted = Object.entries(tierList).sort((a,b)=>b[1]-a[1])
+    return [sorted[0],sorted[1],sorted[2]]
+
+
+
+
+}

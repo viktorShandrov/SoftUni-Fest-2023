@@ -78,7 +78,9 @@ button:disabled {
 .deleteBtn:hover {
   background: #c0372c;
 }
-
+.offerType{
+  text-align: center;
+}
 .offerDetails {
   flex: 2;
   padding: 20px;

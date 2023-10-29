@@ -72,5 +72,16 @@ router.get("/searchBusinessman/:searchParam", async (req, res) => {
     }
 
 });
+router.get("/getTopOfferCategories", async (req, res) => {
+    try {
+        // const {offerId,name,description,price} = req.body
+        const categories = await offerManager.getTopOfferCategories()
+        res.status(200).json({categories})
+    } catch (error) {
+        console.log(error)
+        res.status(400).json({message:error.message})
+    }
+
+});
 
 module.exports = router;
