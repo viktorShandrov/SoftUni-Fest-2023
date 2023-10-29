@@ -14,6 +14,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { PaymentSuccessfullComponent } from './private/payment-successfull/payment-successfull.component';
 import { PaymentUnsuccessfullComponent } from './private/payment-unsuccessfull/payment-unsuccessfull.component';
 import { HomeComponent } from './private/home/home.component';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { HomeComponent } from './private/home/home.component';
     PaymentUnsuccessfullComponent,
     HomeComponent,
   ],
-  imports: [CommonModule, FormsModule, CoreModule, AppRoutingModule],
+  imports: [CommonModule, FormsModule, CoreModule, AppRoutingModule,NgChartsModule],
   providers: [RouterService],
 })
 export class FeaturedModule {}

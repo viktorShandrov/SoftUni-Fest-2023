@@ -13,7 +13,6 @@ router.get("/offer/:id",isAuth, async (req, res) => {
         const {_id} = req.user
 
         const offer = await offerManager.getOffer(id)
-        console.log(offer)
         res.status(200).json({offer})
     } catch (error) {
         console.log(error)
@@ -23,11 +22,11 @@ router.get("/offer/:id",isAuth, async (req, res) => {
 });
 router.post("/createOffer", async (req, res) => {
     try {
-        const {name,description,price} = req.body
+        const {name,description,price,type} = req.body
         const {_id} = req.user
-        console.log(_id)
 
-        const offer = await offerManager.createOffer(name,description,price,_id)
+
+        const offer = await offerManager.createOffer(name,description,price,_id,type)
         res.status(200).json({offer})
     } catch (error) {
         console.log(error)
