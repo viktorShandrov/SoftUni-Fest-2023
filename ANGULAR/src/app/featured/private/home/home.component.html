@@ -5,71 +5,87 @@
       <p>Explore a World of Tailored Solutions and Profitable Ventures</p>
     </div>
   </section>
-  <h1 class="reviews-heading">Reviews</h1>
-  <section class="reviews">
-    <div class="reviewC animate">
-      <div class="imageAndNameC">
-        <img class="reviewerImage" src="./assets/reviewer.jpg" alt="" />
-        <h3 class="name">Sevdalina</h3>
-      </div>
-      <div class="starsAndCommentC">
-        <div class="starsC">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-        </div>
-        <h3 class="comment">
-          Very good services from this platform. Leaving 5 stars :)
-        </h3>
-      </div>
-    </div>
-    <div class="reviewC animate">
-      <div class="imageAndNameC">
-        <img class="reviewerImage" src="./assets/reviewer2.jpg" alt="" />
-        <h3 class="name">Polina</h3>
-      </div>
-      <div class="starsAndCommentC">
-        <div class="starsC">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-        </div>
-        <h3 class="comment">
-          Very good services from this platform. Leaving 5 stars :)
-        </h3>
-      </div>
-    </div>
-    <div class="reviewC animate">
-      <div class="imageAndNameC">
-        <img class="reviewerImage" src="./assets/reviewer3.jpg" alt="" />
-        <h3 class="name">Shrek</h3>
-      </div>
-      <div class="starsAndCommentC">
-        <div class="starsC">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-        </div>
-        <h3 class="comment">IDN, just dropped here</h3>
-      </div>
-    </div>
-  </section>
-  <section class="">
-    <canvas baseChart
-            [type]="'pie'"
-            [datasets]="pieChartDatasets"
-            [labels]="pieChartLabels"
-            [options]="pieChartOptions"
-            [plugins]="pieChartPlugins"
-            [legend]="pieChartLegend">
-    </canvas>
 
+  <div class="reviews-container">
+    <h1 class="reviews-heading">Reviews</h1>
+    <section class="reviews">
+      <div class="reviewC animate">
+        <div class="imageAndNameC">
+          <img class="reviewerImage" src="./assets/reviewer.jpg" alt="" />
+          <h3 class="name">Sevdalina</h3>
+        </div>
+        <div class="starsAndCommentC">
+          <div class="starsC">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h3 class="comment">
+            Very good services from this platform. Leaving 5 stars :)
+          </h3>
+        </div>
+      </div>
+      <div class="reviewC animate">
+        <div class="imageAndNameC">
+          <img class="reviewerImage" src="./assets/reviewer2.jpg" alt="" />
+          <h3 class="name">Polina</h3>
+        </div>
+        <div class="starsAndCommentC">
+          <div class="starsC">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h3 class="comment">
+            Very good services from this platform. Leaving 5 stars :)
+          </h3>
+        </div>
+      </div>
+      <div class="reviewC animate">
+        <div class="imageAndNameC">
+          <img class="reviewerImage" src="./assets/reviewer3.jpg" alt="" />
+          <h3 class="name">Shrek</h3>
+        </div>
+        <div class="starsAndCommentC">
+          <div class="starsC">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <h3 class="comment">IDN, just dropped here</h3>
+        </div>
+      </div>
+    </section>
+  </div>
+  <section class="chart-container">
+    <canvas
+      baseChart
+      [type]="'pie'"
+      [datasets]="pieChartDatasets"
+      [labels]="pieChartLabels"
+      [options]="pieChartOptions"
+      [plugins]="pieChartPlugins"
+      [legend]="pieChartLegend"
+    ></canvas>
+    <div class="right">
+      <h1>
+        Explore data-driven insights and trends in <br />
+        the business world with our powerful analytics.
+      </h1>
+    </div>
   </section>
-  <section class="get-started"></section>
+
+  <section class="get-started">
+    <h2>Begin Your Business Journey</h2>
+    <p>
+      Discover opportunities and offers to kickstart your business endeavors.
+    </p>
+    <a routerLink="/register" class="get-started-link">Get Started</a>
+  </section>
 </div>
